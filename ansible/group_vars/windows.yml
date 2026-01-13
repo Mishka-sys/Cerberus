@@ -1,0 +1,23 @@
+# ==============================================================================
+# Variables for Windows Server (Active Directory)
+# ==============================================================================
+
+---
+# Active Directory
+ad_domain_name: "cerberus.local"
+ad_domain_netbios: "CERBERUS"
+ad_safe_mode_password: "P@ssw0rd2025!SafeMode"
+
+# DNS
+ad_dns_forwarder: "8.8.8.8"
+
+# Password Policy Settings
+password_policy:
+  min_length: 12
+  complexity_enabled: true
+  max_age_days: 90
+  min_age_days: 1
+  history_count: 24
+  lockout_threshold: 5
+  lockout_duration_minutes: 30
+  lockout_observation_minutes: 30

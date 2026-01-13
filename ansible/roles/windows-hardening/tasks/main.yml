@@ -1,0 +1,51 @@
+---
+- name: Disable Guest account
+  win_user:
+    name: Guest
+    account_disabled: yes
+
+- name: Enable Windows Firewall
+  win_shell: |
+    Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True
+
+- name: Enforce Password Policy
+  win_shell: |
+    net accounts /minpwlen:12 /maxpwage:90 /minpwage:1 /uniquepw:5
+  failed_when: false
+
+- name: Disable SMBv1
+  win_shell: |
+    Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol -NoRestart -ErrorAction SilentlyContinue
+    Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force -ErrorAction SilentlyContinue
+  failed_when: false
+
+- name: Disable LLMNR
+  win_regedit:
+    path: HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient
+    name: EnableMulticast
+    data: 0
+    type: dword
+
+- name: Disable NetBIOS
+  win_shell: |
+    $adapters = Get-WmiObject Win32_NetworkAdapterConfiguration | Where-Object { $_.IPEnabled -eq $true }
+    foreach ($adapter in $adapters) {
+      $adapter.SetTcpipNetbios(2)
+    }
+  failed_when: false
+
+- name: Enable Audit Logon Events
+  win_shell: |
+    auditpol /set /subcategory:"Logon" /success:enable /failure:enable
+    auditpol /set /subcategory:"Logoff" /success:enable
+  failed_when: false
+
+- name: Enable RDP
+  win_regedit:
+    path: HKLM:\System\CurrentControlSet\Control\Terminal Server
+    name: fDenyTSConnections
+    data: 0
+    type: dword
+
+- name: Allow RDP in Firewall
+  win_shell: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"

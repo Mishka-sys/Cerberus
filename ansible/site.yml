@@ -1,0 +1,79 @@
+# ==============================================================================
+# USAGE: ansible-playbook -i inventory/hosts site.yml
+# ==============================================================================
+
+---
+- name: "=== PHASE 1: Installation du serveur Zabbix ==="
+  hosts: zabbix_server
+  become: yes
+  gather_facts: yes
+  roles:
+    - zabbix-server
+
+- name: "=== PHASE 2: Configuration du cluster HA (Node01 & Node02) ==="
+  hosts: ha_cluster
+  become: yes
+  gather_facts: yes
+  roles:
+    - ha-cluster
+    - nginx
+    - samba
+
+- name: "=== PHASE 3: Configuration des ressources du cluster ==="
+  hosts: ha_cluster
+  become: yes
+  gather_facts: yes
+  roles:
+    - cluster-resources
+
+- name: "=== PHASE 4: Durcissement de sécurité Linux ==="
+  hosts: ha_cluster
+  become: yes
+  gather_facts: yes
+  roles:
+    - hardening-linux
+
+- name: "=== PHASE 5: Installation des agents Zabbix ==="
+  hosts: zabbix_agents
+  become: yes
+  gather_facts: yes
+  roles:
+    - zabbix-agent
+
+- name: "=== PHASE 6: Configuration Active Directory Windows ==="
+  hosts: windows
+  gather_facts: yes
+  roles:
+    - windows-ad
+
+- name: "=== PHASE 7: Durcissement de sécurité Windows ==="
+  hosts: windows
+  gather_facts: yes
+  roles:
+    - windows-hardening
+
+- name: "=== PHASE FINALE: Rapport de déploiement ==="
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Rapport final
+      debug:
+        msg:
+          - "============================================================"
+          - "         DÉPLOIEMENT TERMINÉ AVEC SUCCÈS"
+          - "============================================================"
+          - ""
+          - "CLUSTER HAUTE DISPONIBILITÉ:"
+          - "  - VIP: 192.168.56.100"
+          - "  - Web: http://192.168.56.100 (ou IP NAT)"
+          - "  - Samba: \\\\192.168.56.100\\shared"
+          - ""
+          - "SUPERVISION ZABBIX:"
+          - "  - URL: http://<IP_ADMIN>/"
+          - "  - Login: Admin / zabbix"
+          - ""
+          - "ACTIVE DIRECTORY:"
+          - "  - Domaine: cerberus.local"
+          - "  - DC: 192.168.56.30"
+          - ""
+          - "============================================================"

@@ -1,0 +1,71 @@
+---
+- name: Configure hosts file
+  win_lineinfile:
+    path: C:\Windows\System32\drivers\etc\hosts
+    line: "{{ item }}"
+    state: present
+  loop:
+    - "192.168.56.10 admin admin.cerberus.local"
+    - "192.168.56.21 node01 node01.cerberus.local"
+    - "192.168.56.22 node02 node02.cerberus.local"
+    - "192.168.56.30 winsrv winsrv.cerberus.local"
+
+- name: Install AD-Domain-Services
+  win_feature:
+    name: AD-Domain-Services
+    include_management_tools: yes
+    include_sub_features: yes
+    state: present
+  register: ad_feature
+
+- name: Install DNS
+  win_feature:
+    name: DNS
+    include_management_tools: yes
+    state: present
+
+- name: Reboot after feature install
+  win_reboot:
+    reboot_timeout: 600
+  when: ad_feature.reboot_required
+
+- name: Check if DC exists
+  win_shell: |
+    try {
+      Get-ADDomain -ErrorAction Stop
+      Write-Output "DC_EXISTS"
+    } catch {
+      Write-Output "NOT_A_DC"
+    }
+  register: dc_check
+  changed_when: false
+  failed_when: false
+
+- name: Promote to Domain Controller
+  win_shell: |
+    Import-Module ADDSDeployment
+    $secpasswd = ConvertTo-SecureString '{{ ad_safe_mode_password }}' -AsPlainText -Force
+    Install-ADDSForest `
+      -DomainName "{{ ad_domain_name }}" `
+      -DomainNetbiosName "{{ ad_domain_netbios }}" `
+      -SafeModeAdministratorPassword $secpasswd `
+      -InstallDns:$true `
+      -CreateDnsDelegation:$false `
+      -DatabasePath "C:\Windows\NTDS" `
+      -LogPath "C:\Windows\NTDS" `
+      -SysvolPath "C:\Windows\SYSVOL" `
+      -NoRebootOnCompletion:$true `
+      -Force:$true
+  when: "'NOT_A_DC' in dc_check.stdout"
+  register: ad_promotion
+
+- name: Reboot after DC promotion
+  win_reboot:
+    reboot_timeout: 900
+    post_reboot_delay: 120
+  when: ad_promotion.changed | default(false)
+
+- name: Configure DNS forwarder
+  win_shell: |
+    Add-DnsServerForwarder -IPAddress "{{ ad_dns_forwarder }}" -PassThru
+  failed_when: false

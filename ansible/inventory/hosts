@@ -1,0 +1,45 @@
+# ==============================================================================
+# Inventaire Ansible
+# ==============================================================================
+
+[all:vars]
+ansible_user=ansible
+ansible_password=ansible
+ansible_become=yes
+ansible_become_method=sudo
+
+# Variables globales
+domain_name=ADZA.local
+vip_address=192.168.56.100
+network_prefix=192.168.56
+
+[admin]
+admin ansible_host=192.168.56.10 ansible_connection=local ansible_user=vagrant
+
+[ha_cluster]
+node01 ansible_host=192.168.56.21
+node02 ansible_host=192.168.56.22
+
+[ha_cluster:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+[redhat_nodes:children]
+ha_cluster
+
+[windows]
+winsrv ansible_host=192.168.56.30
+
+[windows:vars]
+ansible_user=vagrant
+ansible_password=vagrant
+ansible_connection=winrm
+ansible_winrm_transport=basic
+ansible_winrm_server_cert_validation=ignore
+ansible_port=5985
+ansible_become=no
+
+[zabbix_server]
+admin ansible_host=192.168.56.10 ansible_connection=local ansible_user=vagrant
+
+[zabbix_agents:children]
+ha_cluster

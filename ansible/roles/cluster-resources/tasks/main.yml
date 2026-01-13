@@ -1,0 +1,90 @@
+---
+- name: Wait for cluster
+  pause:
+    seconds: 5
+  when: inventory_hostname == 'node01'
+
+- name: Detect NIC
+  shell: ip route | grep "192.168.56" | awk '{print $3}'
+  register: detected_nic
+  changed_when: false
+  when: inventory_hostname == 'node01'
+
+- name: Set VIP NIC
+  set_fact:
+    vip_nic: "{{ detected_nic.stdout | default('eth1') }}"
+  when: inventory_hostname == 'node01'
+
+- name: Check resources
+  command: pcs resource status
+  register: resource_status
+  failed_when: false
+  changed_when: false
+  when: inventory_hostname == 'node01'
+
+- name: Create VIP
+  command: >
+    pcs resource create cluster-vip ocf:heartbeat:IPaddr2
+    ip={{ vip_address }}
+    cidr_netmask={{ vip_cidr }}
+    nic={{ vip_nic }}
+    op monitor interval=10s
+  when: 
+    - inventory_hostname == 'node01'
+    - "'cluster-vip' not in resource_status.stdout"
+  run_once: true
+
+- name: Create webserver resource
+  command: >
+    pcs resource create webserver systemd:nginx
+    op monitor interval=10s timeout=20s
+  when: 
+    - inventory_hostname == 'node01'
+    - "'webserver' not in resource_status.stdout"
+  run_once: true
+
+- name: Create samba resource
+  command: >
+    pcs resource create samba systemd:smb
+    op monitor interval=10s timeout=20s
+  when: 
+    - inventory_hostname == 'node01'
+    - "'samba' not in resource_status.stdout"
+  run_once: true
+
+- name: Check resource group
+  command: pcs resource group show {{ resource_group_name }}
+  register: group_status
+  failed_when: false
+  changed_when: false
+  when: inventory_hostname == 'node01'
+
+- name: Create resource group
+  command: pcs resource group add {{ resource_group_name }} cluster-vip webserver samba
+  when: 
+    - inventory_hostname == 'node01'
+    - group_status.rc != 0
+  run_once: true
+  failed_when: false
+
+- name: Enable resources
+  command: pcs resource enable {{ resource_group_name }}
+  when: inventory_hostname == 'node01'
+  run_once: true
+  failed_when: false
+
+- name: Wait for services
+  pause:
+    seconds: 15
+  when: inventory_hostname == 'node01'
+
+- name: Show cluster status
+  command: pcs status
+  register: final_status
+  changed_when: false
+  when: inventory_hostname == 'node01'
+
+- name: Display status
+  debug:
+    msg: "{{ final_status.stdout_lines }}"
+  when: inventory_hostname == 'node01'

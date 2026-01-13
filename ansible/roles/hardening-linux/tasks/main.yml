@@ -1,0 +1,95 @@
+---
+- name: Install firewalld
+  dnf:
+    name: firewalld
+    state: present
+
+- name: Start firewalld
+  systemd:
+    name: firewalld
+    state: started
+    enabled: yes
+
+- name: Allow services
+  firewalld:
+    service: "{{ item }}"
+    permanent: yes
+    state: enabled
+    immediate: yes
+  loop: "{{ firewall_services }}"
+
+- name: Allow ports
+  firewalld:
+    port: "{{ item }}"
+    permanent: yes
+    state: enabled
+    immediate: yes
+  loop: "{{ firewall_ports }}"
+
+- name: Disable SSH root login
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#?PermitRootLogin'
+    line: 'PermitRootLogin no'
+    backup: yes
+  notify: restart sshd
+
+- name: Disable empty passwords
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#?PermitEmptyPasswords'
+    line: 'PermitEmptyPasswords no'
+  notify: restart sshd
+
+- name: Install dnf-automatic
+  dnf:
+    name: dnf-automatic
+    state: present
+
+- name: Configure security updates
+  lineinfile:
+    path: /etc/dnf/automatic.conf
+    regexp: '^upgrade_type'
+    line: 'upgrade_type = security'
+
+- name: Enable auto updates
+  lineinfile:
+    path: /etc/dnf/automatic.conf
+    regexp: '^apply_updates'
+    line: 'apply_updates = yes'
+
+- name: Enable dnf-automatic timer
+  systemd:
+    name: dnf-automatic.timer
+    state: started
+    enabled: yes
+
+- name: Install auditd
+  dnf:
+    name: audit
+    state: present
+
+- name: Enable auditd
+  systemd:
+    name: auditd
+    state: started
+    enabled: yes
+
+- name: Configure SSH banner
+  copy:
+    content: |
+      ============================================================
+           CERBERUS - Guardian of Infrastructure
+      ============================================================
+           WARNING: Authorized access only.
+           All activity is monitored and logged.
+      ============================================================
+    dest: /etc/issue.net
+    mode: '0644'
+
+- name: Enable SSH banner
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#?Banner'
+    line: 'Banner /etc/issue.net'
+  notify: restart sshd

@@ -1,0 +1,26 @@
+# ==============================================================================
+# Global variables for all hosts
+# ==============================================================================
+
+---
+# Domain Configuration
+domain_name: "cerberus.local"
+domain_netbios: "CERBERUS"
+
+# Network Configuration
+network_prefix: "192.168.56"
+vip_address: "192.168.56.100"
+vip_cidr: "24"
+
+# HA Cluster Settings
+cluster_name: "ha-cluster"
+
+# Zabbix
+zabbix_server_ip: "192.168.56.10"
+zabbix_server_port: 10051
+zabbix_agent_port: 10050
+
+# Samba
+samba_workgroup: "CERBERUS"
+samba_share_name: "shared"
+samba_share_path: "/srv/samba/shared"

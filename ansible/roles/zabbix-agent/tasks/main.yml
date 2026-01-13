@@ -1,0 +1,51 @@
+---
+# Download RPM first with retries
+- name: Download Zabbix repository RPM
+  get_url:
+    url: https://repo.zabbix.com/zabbix/7.0/rocky/9/x86_64/zabbix-release-latest-7.0.el9.noarch.rpm
+    dest: /tmp/zabbix-release.rpm
+    mode: '0644'
+    timeout: 60
+  retries: 5
+  delay: 15
+  register: zabbix_rpm_download
+  until: zabbix_rpm_download is succeeded
+
+- name: Install Zabbix repository from local RPM
+  dnf:
+    name: /tmp/zabbix-release.rpm
+    state: present
+    disable_gpg_check: yes
+
+- name: Clean DNF cache
+  command: dnf clean all
+  changed_when: false
+
+- name: Install Zabbix Agent
+  dnf:
+    name: zabbix-agent
+    state: present
+    update_cache: yes
+  retries: 5
+  delay: 15
+  register: zabbix_install
+  until: zabbix_install is succeeded
+
+- name: Configure Zabbix Agent
+  template:
+    src: zabbix_agentd.conf.j2
+    dest: /etc/zabbix/zabbix_agentd.conf
+  notify: restart zabbix-agent
+
+- name: Allow Zabbix port
+  firewalld:
+    port: 10050/tcp
+    permanent: yes
+    state: enabled
+    immediate: yes
+
+- name: Start Zabbix Agent
+  systemd:
+    name: zabbix-agent
+    state: started
+    enabled: yes

@@ -1,0 +1,31 @@
+# ==============================================================================
+# HA Cluster variables (Node01 & Node02)
+# ==============================================================================
+
+---
+# Pacemaker/Corosync
+pacemaker_cluster_name: "ha-cluster"
+corosync_cluster_name: "ha-cluster"
+
+# Network Interface auto-detection
+# Possible values: ens224 (VMware), eth1 (VirtualBox), enp0s8
+vip_interface: "{{ ansible_default_ipv4.interface | default('eth1') }}"
+
+# Resource Group
+resource_group_name: "ha-services"
+
+# Nginx
+nginx_root: "/var/www/html"
+
+# Firewalld services and ports
+firewall_services:
+  - ssh
+  - http
+  - https
+  - high-availability
+  - samba
+  - samba-client
+
+firewall_ports:
+  - "10050/tcp"
+  - "10051/tcp"

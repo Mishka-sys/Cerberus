@@ -1,0 +1,40 @@
+---
+- name: Install Samba
+  dnf:
+    name:
+      - samba
+      - samba-common
+      - samba-client
+    state: present
+
+- name: Create share directory
+  file:
+    path: "{{ samba_share_path }}"
+    state: directory
+    owner: nobody
+    group: nobody
+    mode: '0777'
+
+- name: Create test file
+  copy:
+    content: |
+      CERBERUS - Samba HA Share
+      Node: {{ inventory_hostname }}
+      VIP: {{ vip_address }}
+    dest: "{{ samba_share_path }}/README.txt"
+    mode: '0644'
+
+- name: Configure Samba
+  template:
+    src: smb.conf.j2
+    dest: /etc/samba/smb.conf
+    backup: yes
+
+- name: Stop Samba (managed by cluster)
+  systemd:
+    name: "{{ item }}"
+    enabled: no
+    state: stopped
+  loop:
+    - smb
+    - nmb

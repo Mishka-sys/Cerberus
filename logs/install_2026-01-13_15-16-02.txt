@@ -1,0 +1,1754 @@
+[15:16:05] START: Linux VMs
+Bringing machine 'admin' up with 'vmware_desktop' provider...
+Bringing machine 'node01' up with 'vmware_desktop' provider...
+Bringing machine 'node02' up with 'vmware_desktop' provider...
+==> admin: Cloning VMware VM: 'bento/ubuntu-22.04'. This can take some time...
+==> admin: Verifying vmnet devices are healthy...
+==> admin: Preparing network adapters...
+==> admin: Starting the VMware VM...
+==> admin: Waiting for the VM to receive an address...
+==> admin: Forwarding ports...
+    admin: -- 80 => 8080
+    admin: -- 443 => 8443
+    admin: -- 22 => 2222
+==> admin: Waiting for machine to boot. This may take a few minutes...
+    admin: SSH address: 127.0.0.1:2222
+    admin: SSH username: vagrant
+    admin: SSH auth method: private key
+    admin: 
+    admin: Vagrant insecure key detected. Vagrant will automatically replace
+    admin: this with a newly generated keypair for better security.
+    admin: 
+    admin: Inserting generated public key within guest...
+    admin: Removing insecure key from the guest if it's present...
+    admin: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> admin: Machine booted and ready!
+==> admin: Setting hostname...
+==> admin: Configuring network adapters within the VM...
+==> admin: Waiting for HGFS to become available...
+==> admin: Enabling and configuring shared folders...
+    admin: -- C:/Users/Marwa/Desktop/cerberus: /vagrant
+    admin: -- C:/Users/Marwa/Desktop/cerberus/ansible: /home/vagrant/ansible
+==> admin: Running provisioner: shell...
+    admin: Running: inline script
+    admin: Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+    admin: Hit:2 http://us.archive.ubuntu.com/ubuntu jammy InRelease
+    admin: Get:3 http://us.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+    admin: Get:4 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [2,903 kB]
+    admin: Get:5 http://us.archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+    admin: Get:6 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [418 kB]
+    admin: Get:7 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [4,883 kB]
+    admin: Get:8 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [917 kB]
+    admin: Get:9 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1,008 kB]
+    admin: Get:10 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [221 kB]
+    admin: Get:11 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [3,164 kB]
+    admin: Get:12 http://us.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [485 kB]
+    admin: Get:13 http://us.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [5,043 kB]
+    admin: Get:14 http://us.archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [944 kB]
+    admin: Get:15 http://us.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1,245 kB]
+    admin: Get:16 http://us.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [310 kB]
+    admin: Get:17 http://us.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [57.6 kB]
+    admin: Get:18 http://us.archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [69.4 kB]
+    admin: Get:19 http://us.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [31.7 kB]
+    admin: Get:20 http://us.archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [16.9 kB]
+    admin: Fetched 22.1 MB in 3s (8,129 kB/s)
+    admin: Reading package lists...
+    admin: Reading package lists...
+    admin: Building dependency tree...
+    admin: Reading state information...
+    admin: software-properties-common is already the newest version (0.99.22.9).
+    admin: The following additional packages will be installed:
+    admin:   build-essential bzip2 cpp cpp-11 dpkg-dev fakeroot fontconfig-config
+    admin:   fonts-dejavu-core g++ g++-11 gcc gcc-11 gcc-11-base javascript-common
+    admin:   libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl
+    admin:   libasan6 libatomic1 libc-dev-bin libc-devtools libc6-dev libcc1-0
+    admin:   libcrypt-dev libdeflate0 libdpkg-perl libexpat1-dev libfakeroot
+    admin:   libfile-fcntllock-perl libfontconfig1 libgcc-11-dev libgd3 libgomp1 libisl23
+    admin:   libitm1 libjbig0 libjpeg-turbo8 libjpeg8 libjs-jquery libjs-sphinxdoc
+    admin:   libjs-underscore liblsan0 libmpc3 libnsl-dev libpython3-dev libpython3.10
+    admin:   libpython3.10-dev libpython3.10-minimal libpython3.10-stdlib libquadmath0
+    admin:   libstdc++-11-dev libtiff5 libtirpc-dev libtsan0 libubsan1 libwebp7 libx11-6
+    admin:   libx11-data libxau6 libxcb1 libxdmcp6 libxpm4 linux-libc-dev
+    admin:   lto-disabled-list make manpages-dev python3-dev python3-wheel python3.10
+    admin:   python3.10-dev python3.10-minimal rpcsvc-proto zlib1g-dev
+    admin: Suggested packages:
+    admin:   bzip2-doc cpp-doc gcc-11-locales debian-keyring g++-multilib g++-11-multilib
+    admin:   gcc-11-doc gcc-multilib autoconf automake libtool flex bison gdb gcc-doc
+    admin:   gcc-11-multilib apache2 | lighttpd | httpd glibc-doc bzr libgd-tools
+    admin:   libstdc++-11-doc make-doc python3.10-venv python3.10-doc binfmt-support
+    admin: The following NEW packages will be installed:
+    admin:   build-essential bzip2 cpp cpp-11 dpkg-dev fakeroot fontconfig-config
+    admin:   fonts-dejavu-core g++ g++-11 gcc gcc-11 gcc-11-base javascript-common
+    admin:   libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl
+    admin:   libasan6 libatomic1 libc-dev-bin libc-devtools libc6-dev libcc1-0
+    admin:   libcrypt-dev libdeflate0 libdpkg-perl libexpat1-dev libfakeroot
+    admin:   libfile-fcntllock-perl libfontconfig1 libgcc-11-dev libgd3 libgomp1 libisl23
+    admin:   libitm1 libjbig0 libjpeg-turbo8 libjpeg8 libjs-jquery libjs-sphinxdoc
+    admin:   libjs-underscore liblsan0 libmpc3 libnsl-dev libpython3-dev
+    admin:   libpython3.10-dev libquadmath0 libstdc++-11-dev libtiff5 libtirpc-dev
+    admin:   libtsan0 libubsan1 libwebp7 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6
+    admin:   libxpm4 linux-libc-dev lto-disabled-list make manpages-dev python3-dev
+    admin:   python3-pip python3-wheel python3.10-dev rpcsvc-proto sshpass zlib1g-dev
+    admin: The following packages will be upgraded:
+    admin:   libpython3.10 libpython3.10-minimal libpython3.10-stdlib python3.10
+    admin:   python3.10-minimal
+    admin: 5 upgraded, 70 newly installed, 0 to remove and 45 not upgraded.
+    admin: Need to get 79.6 MB of archives.
+    admin: After this operation, 243 MB of additional disk space will be used.
+    admin: Get:1 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpython3.10 amd64 3.10.12-1~22.04.13 [1,949 kB]
+    admin: Get:2 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3.10 amd64 3.10.12-1~22.04.13 [508 kB]
+    admin: Get:3 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpython3.10-stdlib amd64 3.10.12-1~22.04.13 [1,850 kB]
+    admin: Get:4 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3.10-minimal amd64 3.10.12-1~22.04.13 [2,272 kB]
+    admin: Get:5 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpython3.10-minimal amd64 3.10.12-1~22.04.13 [815 kB]
+    admin: Get:6 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libxau6 amd64 1:1.0.9-1build5 [7,634 B]
+    admin: Get:7 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libxdmcp6 amd64 1:1.1.3-0ubuntu5 [10.9 kB]
+    admin: Get:8 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb1 amd64 1.14-3ubuntu3 [49.0 kB]
+    admin: Get:9 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libx11-data all 2:1.7.5-1ubuntu0.3 [120 kB]
+    admin: Get:10 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libx11-6 amd64 2:1.7.5-1ubuntu0.3 [667 kB]
+    admin: Get:11 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libc-dev-bin amd64 2.35-0ubuntu3.11 [20.3 kB]
+    admin: Get:12 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 linux-libc-dev amd64 5.15.0-164.174 [1,325 kB]
+    admin: Get:13 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libcrypt-dev amd64 1:4.4.27-1 [112 kB]
+    admin: Get:14 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 rpcsvc-proto amd64 1.4.2-0ubuntu6 [68.5 kB]
+    admin: Get:15 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libtirpc-dev amd64 1.3.2-2ubuntu0.1 [192 kB]
+    admin: Get:16 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libnsl-dev amd64 1.3.0-2build2 [71.3 kB]
+    admin: Get:17 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libc6-dev amd64 2.35-0ubuntu3.11 [2,100 kB]
+    admin: Get:18 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 gcc-11-base amd64 11.4.0-1ubuntu1~22.04.2 [20.8 kB]
+    admin: Get:19 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libisl23 amd64 0.24-2build1 [727 kB]
+    admin: Get:20 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libmpc3 amd64 1.2.1-2build1 [46.9 kB]
+    admin: Get:21 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 cpp-11 amd64 11.4.0-1ubuntu1~22.04.2 [10.0 MB]
+    admin: Get:22 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 cpp amd64 4:11.2.0-1ubuntu1 [27.7 kB]
+    admin: Get:23 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libcc1-0 amd64 12.3.0-1ubuntu1~22.04.2 [48.3 kB]
+    admin: Get:24 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libgomp1 amd64 12.3.0-1ubuntu1~22.04.2 [127 kB]
+    admin: Get:25 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libitm1 amd64 12.3.0-1ubuntu1~22.04.2 [30.2 kB]
+    admin: Get:26 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libatomic1 amd64 12.3.0-1ubuntu1~22.04.2 [10.4 kB]
+    admin: Get:27 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libasan6 amd64 11.4.0-1ubuntu1~22.04.2 [2,283 kB]
+    admin: Get:28 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 liblsan0 amd64 12.3.0-1ubuntu1~22.04.2 [1,069 kB]
+    admin: Get:29 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libtsan0 amd64 11.4.0-1ubuntu1~22.04.2 [2,262 kB]
+    admin: Get:30 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libubsan1 amd64 12.3.0-1ubuntu1~22.04.2 [976 kB]
+    admin: Get:31 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libquadmath0 amd64 12.3.0-1ubuntu1~22.04.2 [154 kB]
+    admin: Get:32 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libgcc-11-dev amd64 11.4.0-1ubuntu1~22.04.2 [2,517 kB]
+    admin: Get:33 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 gcc-11 amd64 11.4.0-1ubuntu1~22.04.2 [20.1 MB]
+    admin: Get:34 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 gcc amd64 4:11.2.0-1ubuntu1 [5,112 B]
+    admin: Get:35 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libstdc++-11-dev amd64 11.4.0-1ubuntu1~22.04.2 [2,101 kB]
+    admin: Get:36 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 g++-11 amd64 11.4.0-1ubuntu1~22.04.2 [11.4 MB]
+    admin: Get:37 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 g++ amd64 4:11.2.0-1ubuntu1 [1,412 B]
+    admin: Get:38 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 make amd64 4.3-4.1build1 [180 kB]
+    admin: Get:39 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libdpkg-perl all 1.21.1ubuntu2.6 [237 kB]
+    admin: Get:40 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 bzip2 amd64 1.0.8-5build1 [34.8 kB]
+    admin: Get:41 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 lto-disabled-list all 24 [12.5 kB]
+    admin: Get:42 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 dpkg-dev all 1.21.1ubuntu2.6 [922 kB]
+    admin: Get:43 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 build-essential amd64 12.9ubuntu3 [4,744 B]
+    admin: Get:44 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libfakeroot amd64 1.28-1ubuntu1 [31.5 kB]
+    admin: Get:45 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 fakeroot amd64 1.28-1ubuntu1 [60.4 kB]
+    admin: Get:46 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 fonts-dejavu-core all 2.37-2build1 [1,041 kB]
+    admin: Get:47 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 fontconfig-config all 2.13.1-4.2ubuntu5 [29.1 kB]
+    admin: Get:48 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 javascript-common all 11+nmu1 [5,936 B]
+    admin: Get:49 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libalgorithm-diff-perl all 1.201-1 [41.8 kB]
+    admin: Get:50 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libalgorithm-diff-xs-perl amd64 0.04-6build3 [11.9 kB]
+    admin: Get:51 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libalgorithm-merge-perl all 0.08-3 [12.0 kB]
+    admin: Get:52 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libfontconfig1 amd64 2.13.1-4.2ubuntu5 [131 kB]
+    admin: Get:53 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libjpeg-turbo8 amd64 2.1.2-0ubuntu1 [134 kB]
+    admin: Get:54 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libjpeg8 amd64 8c-2ubuntu10 [2,264 B]
+    admin: Get:55 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libdeflate0 amd64 1.10-2 [70.9 kB]
+    admin: Get:56 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libjbig0 amd64 2.1-3.1ubuntu0.22.04.1 [29.2 kB]
+    admin: Get:57 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libwebp7 amd64 1.2.2-2ubuntu0.22.04.2 [206 kB]
+    admin: Get:58 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libtiff5 amd64 4.3.0-6ubuntu0.12 [185 kB]
+    admin: Get:59 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libxpm4 amd64 1:3.5.12-1ubuntu0.22.04.2 [36.7 kB]
+    admin: Get:60 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libgd3 amd64 2.3.0-2ubuntu2.3 [129 kB]
+    admin: Get:61 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libc-devtools amd64 2.35-0ubuntu3.11 [29.0 kB]
+    admin: Get:62 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libexpat1-dev amd64 2.4.7-1ubuntu0.6 [148 kB]
+    admin: Get:63 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libfile-fcntllock-perl amd64 0.22-3build7 [33.9 kB]
+    admin: Get:64 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libjs-jquery all 3.6.0+dfsg+~3.5.13-1 [321 kB]
+    admin: Get:65 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libjs-underscore all 1.13.2~dfsg-2 [118 kB]
+    admin: Get:66 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 libjs-sphinxdoc all 4.3.2-1 [139 kB]
+    admin: Get:67 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 zlib1g-dev amd64 1:1.2.11.dfsg-2ubuntu9.2 [164 kB]
+    admin: Get:68 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpython3.10-dev amd64 3.10.12-1~22.04.13 [4,763 kB]
+    admin: Get:69 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpython3-dev amd64 3.10.6-1~22.04.1 [7,064 B]
+    admin: Get:70 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 manpages-dev all 5.10-1ubuntu1 [2,309 kB]
+    admin: Get:71 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3.10-dev amd64 3.10.12-1~22.04.13 [508 kB]
+    admin: Get:72 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-dev amd64 3.10.6-1~22.04.1 [26.0 kB]
+    admin: Get:73 http://us.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 python3-wheel all 0.37.1-2ubuntu0.22.04.1 [32.0 kB]
+    admin: Get:74 http://us.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 python3-pip all 22.0.2+dfsg-1ubuntu0.7 [1,306 kB]
+    admin: Get:75 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 sshpass amd64 1.09-1 [11.7 kB]
+    admin: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    admin: Fetched 79.6 MB in 3s (28.5 MB/s)
+    admin: (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 73974 files and directories currently installed.)
+    admin: Preparing to unpack .../00-libpython3.10_3.10.12-1~22.04.13_amd64.deb ...
+    admin: Unpacking libpython3.10:amd64 (3.10.12-1~22.04.13) over (3.10.12-1~22.04.11) ...
+    admin: Preparing to unpack .../01-python3.10_3.10.12-1~22.04.13_amd64.deb ...
+    admin: Unpacking python3.10 (3.10.12-1~22.04.13) over (3.10.12-1~22.04.11) ...
+    admin: Preparing to unpack .../02-libpython3.10-stdlib_3.10.12-1~22.04.13_amd64.deb ...
+    admin: Unpacking libpython3.10-stdlib:amd64 (3.10.12-1~22.04.13) over (3.10.12-1~22.04.11) ...
+    admin: Preparing to unpack .../03-python3.10-minimal_3.10.12-1~22.04.13_amd64.deb ...
+    admin: Unpacking python3.10-minimal (3.10.12-1~22.04.13) over (3.10.12-1~22.04.11) ...
+    admin: Preparing to unpack .../04-libpython3.10-minimal_3.10.12-1~22.04.13_amd64.deb ...
+    admin: Unpacking libpython3.10-minimal:amd64 (3.10.12-1~22.04.13) over (3.10.12-1~22.04.11) ...
+    admin: Selecting previously unselected package libxau6:amd64.
+    admin: Preparing to unpack .../05-libxau6_1%3a1.0.9-1build5_amd64.deb ...
+    admin: Unpacking libxau6:amd64 (1:1.0.9-1build5) ...
+    admin: Selecting previously unselected package libxdmcp6:amd64.
+    admin: Preparing to unpack .../06-libxdmcp6_1%3a1.1.3-0ubuntu5_amd64.deb ...
+    admin: Unpacking libxdmcp6:amd64 (1:1.1.3-0ubuntu5) ...
+    admin: Selecting previously unselected package libxcb1:amd64.
+    admin: Preparing to unpack .../07-libxcb1_1.14-3ubuntu3_amd64.deb ...
+    admin: Unpacking libxcb1:amd64 (1.14-3ubuntu3) ...
+    admin: Selecting previously unselected package libx11-data.
+    admin: Preparing to unpack .../08-libx11-data_2%3a1.7.5-1ubuntu0.3_all.deb ...
+    admin: Unpacking libx11-data (2:1.7.5-1ubuntu0.3) ...
+    admin: Selecting previously unselected package libx11-6:amd64.
+    admin: Preparing to unpack .../09-libx11-6_2%3a1.7.5-1ubuntu0.3_amd64.deb ...
+    admin: Unpacking libx11-6:amd64 (2:1.7.5-1ubuntu0.3) ...
+    admin: Selecting previously unselected package libc-dev-bin.
+    admin: Preparing to unpack .../10-libc-dev-bin_2.35-0ubuntu3.11_amd64.deb ...
+    admin: Unpacking libc-dev-bin (2.35-0ubuntu3.11) ...
+    admin: Selecting previously unselected package linux-libc-dev:amd64.
+    admin: Preparing to unpack .../11-linux-libc-dev_5.15.0-164.174_amd64.deb ...
+    admin: Unpacking linux-libc-dev:amd64 (5.15.0-164.174) ...
+    admin: Selecting previously unselected package libcrypt-dev:amd64.
+    admin: Preparing to unpack .../12-libcrypt-dev_1%3a4.4.27-1_amd64.deb ...
+    admin: Unpacking libcrypt-dev:amd64 (1:4.4.27-1) ...
+    admin: Selecting previously unselected package rpcsvc-proto.
+    admin: Preparing to unpack .../13-rpcsvc-proto_1.4.2-0ubuntu6_amd64.deb ...
+    admin: Unpacking rpcsvc-proto (1.4.2-0ubuntu6) ...
+    admin: Selecting previously unselected package libtirpc-dev:amd64.
+    admin: Preparing to unpack .../14-libtirpc-dev_1.3.2-2ubuntu0.1_amd64.deb ...
+    admin: Unpacking libtirpc-dev:amd64 (1.3.2-2ubuntu0.1) ...
+    admin: Selecting previously unselected package libnsl-dev:amd64.
+    admin: Preparing to unpack .../15-libnsl-dev_1.3.0-2build2_amd64.deb ...
+    admin: Unpacking libnsl-dev:amd64 (1.3.0-2build2) ...
+    admin: Selecting previously unselected package libc6-dev:amd64.
+    admin: Preparing to unpack .../16-libc6-dev_2.35-0ubuntu3.11_amd64.deb ...
+    admin: Unpacking libc6-dev:amd64 (2.35-0ubuntu3.11) ...
+    admin: Selecting previously unselected package gcc-11-base:amd64.
+    admin: Preparing to unpack .../17-gcc-11-base_11.4.0-1ubuntu1~22.04.2_amd64.deb ...
+    admin: Unpacking gcc-11-base:amd64 (11.4.0-1ubuntu1~22.04.2) ...
+    admin: Selecting previously unselected package libisl23:amd64.
+    admin: Preparing to unpack .../18-libisl23_0.24-2build1_amd64.deb ...
+    admin: Unpacking libisl23:amd64 (0.24-2build1) ...
+    admin: Selecting previously unselected package libmpc3:amd64.
+    admin: Preparing to unpack .../19-libmpc3_1.2.1-2build1_amd64.deb ...
+    admin: Unpacking libmpc3:amd64 (1.2.1-2build1) ...
+    admin: Selecting previously unselected package cpp-11.
+    admin: Preparing to unpack .../20-cpp-11_11.4.0-1ubuntu1~22.04.2_amd64.deb ...
+    admin: Unpacking cpp-11 (11.4.0-1ubuntu1~22.04.2) ...
+    admin: Selecting previously unselected package cpp.
+    admin: Preparing to unpack .../21-cpp_4%3a11.2.0-1ubuntu1_amd64.deb ...
+    admin: Unpacking cpp (4:11.2.0-1ubuntu1) ...
+    admin: Selecting previously unselected package libcc1-0:amd64.
+    admin: Preparing to unpack .../22-libcc1-0_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+    admin: Unpacking libcc1-0:amd64 (12.3.0-1ubuntu1~22.04.2) ...
+    admin: Selecting previously unselected package libgomp1:amd64.
+    admin: Preparing to unpack .../23-libgomp1_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+    admin: Unpacking libgomp1:amd64 (12.3.0-1ubuntu1~22.04.2) ...
+    admin: Selecting previously unselected package libitm1:amd64.
+    admin: Preparing to unpack .../24-libitm1_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+    admin: Unpacking libitm1:amd64 (12.3.0-1ubuntu1~22.04.2) ...
+    admin: Selecting previously unselected package libatomic1:amd64.
+    admin: Preparing to unpack .../25-libatomic1_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+    admin: Unpacking libatomic1:amd64 (12.3.0-1ubuntu1~22.04.2) ...
+    admin: Selecting previously unselected package libasan6:amd64.
+    admin: Preparing to unpack .../26-libasan6_11.4.0-1ubuntu1~22.04.2_amd64.deb ...
+    admin: Unpacking libasan6:amd64 (11.4.0-1ubuntu1~22.04.2) ...
+    admin: Selecting previously unselected package liblsan0:amd64.
+    admin: Preparing to unpack .../27-liblsan0_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+    admin: Unpacking liblsan0:amd64 (12.3.0-1ubuntu1~22.04.2) ...
+    admin: Selecting previously unselected package libtsan0:amd64.
+    admin: Preparing to unpack .../28-libtsan0_11.4.0-1ubuntu1~22.04.2_amd64.deb ...
+    admin: Unpacking libtsan0:amd64 (11.4.0-1ubuntu1~22.04.2) ...
+    admin: Selecting previously unselected package libubsan1:amd64.
+    admin: Preparing to unpack .../29-libubsan1_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+    admin: Unpacking libubsan1:amd64 (12.3.0-1ubuntu1~22.04.2) ...
+    admin: Selecting previously unselected package libquadmath0:amd64.
+    admin: Preparing to unpack .../30-libquadmath0_12.3.0-1ubuntu1~22.04.2_amd64.deb ...
+    admin: Unpacking libquadmath0:amd64 (12.3.0-1ubuntu1~22.04.2) ...
+    admin: Selecting previously unselected package libgcc-11-dev:amd64.
+    admin: Preparing to unpack .../31-libgcc-11-dev_11.4.0-1ubuntu1~22.04.2_amd64.deb ...
+    admin: Unpacking libgcc-11-dev:amd64 (11.4.0-1ubuntu1~22.04.2) ...
+    admin: Selecting previously unselected package gcc-11.
+    admin: Preparing to unpack .../32-gcc-11_11.4.0-1ubuntu1~22.04.2_amd64.deb ...
+    admin: Unpacking gcc-11 (11.4.0-1ubuntu1~22.04.2) ...
+    admin: Selecting previously unselected package gcc.
+    admin: Preparing to unpack .../33-gcc_4%3a11.2.0-1ubuntu1_amd64.deb ...
+    admin: Unpacking gcc (4:11.2.0-1ubuntu1) ...
+    admin: Selecting previously unselected package libstdc++-11-dev:amd64.
+    admin: Preparing to unpack .../34-libstdc++-11-dev_11.4.0-1ubuntu1~22.04.2_amd64.deb ...
+    admin: Unpacking libstdc++-11-dev:amd64 (11.4.0-1ubuntu1~22.04.2) ...
+    admin: Selecting previously unselected package g++-11.
+    admin: Preparing to unpack .../35-g++-11_11.4.0-1ubuntu1~22.04.2_amd64.deb ...
+    admin: Unpacking g++-11 (11.4.0-1ubuntu1~22.04.2) ...
+    admin: Selecting previously unselected package g++.
+    admin: Preparing to unpack .../36-g++_4%3a11.2.0-1ubuntu1_amd64.deb ...
+    admin: Unpacking g++ (4:11.2.0-1ubuntu1) ...
+    admin: Selecting previously unselected package make.
+    admin: Preparing to unpack .../37-make_4.3-4.1build1_amd64.deb ...
+    admin: Unpacking make (4.3-4.1build1) ...
+    admin: Selecting previously unselected package libdpkg-perl.
+    admin: Preparing to unpack .../38-libdpkg-perl_1.21.1ubuntu2.6_all.deb ...
+    admin: Unpacking libdpkg-perl (1.21.1ubuntu2.6) ...
+    admin: Selecting previously unselected package bzip2.
+    admin: Preparing to unpack .../39-bzip2_1.0.8-5build1_amd64.deb ...
+    admin: Unpacking bzip2 (1.0.8-5build1) ...
+    admin: Selecting previously unselected package lto-disabled-list.
+    admin: Preparing to unpack .../40-lto-disabled-list_24_all.deb ...
+    admin: Unpacking lto-disabled-list (24) ...
+    admin: Selecting previously unselected package dpkg-dev.
+    admin: Preparing to unpack .../41-dpkg-dev_1.21.1ubuntu2.6_all.deb ...
+    admin: Unpacking dpkg-dev (1.21.1ubuntu2.6) ...
+    admin: Selecting previously unselected package build-essential.
+    admin: Preparing to unpack .../42-build-essential_12.9ubuntu3_amd64.deb ...
+    admin: Unpacking build-essential (12.9ubuntu3) ...
+    admin: Selecting previously unselected package libfakeroot:amd64.
+    admin: Preparing to unpack .../43-libfakeroot_1.28-1ubuntu1_amd64.deb ...
+    admin: Unpacking libfakeroot:amd64 (1.28-1ubuntu1) ...
+    admin: Selecting previously unselected package fakeroot.
+    admin: Preparing to unpack .../44-fakeroot_1.28-1ubuntu1_amd64.deb ...
+    admin: Unpacking fakeroot (1.28-1ubuntu1) ...
+    admin: Selecting previously unselected package fonts-dejavu-core.
+    admin: Preparing to unpack .../45-fonts-dejavu-core_2.37-2build1_all.deb ...
+    admin: Unpacking fonts-dejavu-core (2.37-2build1) ...
+    admin: Selecting previously unselected package fontconfig-config.
+    admin: Preparing to unpack .../46-fontconfig-config_2.13.1-4.2ubuntu5_all.deb ...
+    admin: Unpacking fontconfig-config (2.13.1-4.2ubuntu5) ...
+    admin: Selecting previously unselected package javascript-common.
+    admin: Preparing to unpack .../47-javascript-common_11+nmu1_all.deb ...
+    admin: Unpacking javascript-common (11+nmu1) ...
+    admin: Selecting previously unselected package libalgorithm-diff-perl.
+    admin: Preparing to unpack .../48-libalgorithm-diff-perl_1.201-1_all.deb ...
+    admin: Unpacking libalgorithm-diff-perl (1.201-1) ...
+    admin: Selecting previously unselected package libalgorithm-diff-xs-perl.
+    admin: Preparing to unpack .../49-libalgorithm-diff-xs-perl_0.04-6build3_amd64.deb ...
+    admin: Unpacking libalgorithm-diff-xs-perl (0.04-6build3) ...
+    admin: Selecting previously unselected package libalgorithm-merge-perl.
+    admin: Preparing to unpack .../50-libalgorithm-merge-perl_0.08-3_all.deb ...
+    admin: Unpacking libalgorithm-merge-perl (0.08-3) ...
+    admin: Selecting previously unselected package libfontconfig1:amd64.
+    admin: Preparing to unpack .../51-libfontconfig1_2.13.1-4.2ubuntu5_amd64.deb ...
+    admin: Unpacking libfontconfig1:amd64 (2.13.1-4.2ubuntu5) ...
+    admin: Selecting previously unselected package libjpeg-turbo8:amd64.
+    admin: Preparing to unpack .../52-libjpeg-turbo8_2.1.2-0ubuntu1_amd64.deb ...
+    admin: Unpacking libjpeg-turbo8:amd64 (2.1.2-0ubuntu1) ...
+    admin: Selecting previously unselected package libjpeg8:amd64.
+    admin: Preparing to unpack .../53-libjpeg8_8c-2ubuntu10_amd64.deb ...
+    admin: Unpacking libjpeg8:amd64 (8c-2ubuntu10) ...
+    admin: Selecting previously unselected package libdeflate0:amd64.
+    admin: Preparing to unpack .../54-libdeflate0_1.10-2_amd64.deb ...
+    admin: Unpacking libdeflate0:amd64 (1.10-2) ...
+    admin: Selecting previously unselected package libjbig0:amd64.
+    admin: Preparing to unpack .../55-libjbig0_2.1-3.1ubuntu0.22.04.1_amd64.deb ...
+    admin: Unpacking libjbig0:amd64 (2.1-3.1ubuntu0.22.04.1) ...
+    admin: Selecting previously unselected package libwebp7:amd64.
+    admin: Preparing to unpack .../56-libwebp7_1.2.2-2ubuntu0.22.04.2_amd64.deb ...
+    admin: Unpacking libwebp7:amd64 (1.2.2-2ubuntu0.22.04.2) ...
+    admin: Selecting previously unselected package libtiff5:amd64.
+    admin: Preparing to unpack .../57-libtiff5_4.3.0-6ubuntu0.12_amd64.deb ...
+    admin: Unpacking libtiff5:amd64 (4.3.0-6ubuntu0.12) ...
+    admin: Selecting previously unselected package libxpm4:amd64.
+    admin: Preparing to unpack .../58-libxpm4_1%3a3.5.12-1ubuntu0.22.04.2_amd64.deb ...
+    admin: Unpacking libxpm4:amd64 (1:3.5.12-1ubuntu0.22.04.2) ...
+    admin: Selecting previously unselected package libgd3:amd64.
+    admin: Preparing to unpack .../59-libgd3_2.3.0-2ubuntu2.3_amd64.deb ...
+    admin: Unpacking libgd3:amd64 (2.3.0-2ubuntu2.3) ...
+    admin: Selecting previously unselected package libc-devtools.
+    admin: Preparing to unpack .../60-libc-devtools_2.35-0ubuntu3.11_amd64.deb ...
+    admin: Unpacking libc-devtools (2.35-0ubuntu3.11) ...
+    admin: Selecting previously unselected package libexpat1-dev:amd64.
+    admin: Preparing to unpack .../61-libexpat1-dev_2.4.7-1ubuntu0.6_amd64.deb ...
+    admin: Unpacking libexpat1-dev:amd64 (2.4.7-1ubuntu0.6) ...
+    admin: Selecting previously unselected package libfile-fcntllock-perl.
+    admin: Preparing to unpack .../62-libfile-fcntllock-perl_0.22-3build7_amd64.deb ...
+    admin: Unpacking libfile-fcntllock-perl (0.22-3build7) ...
+    admin: Selecting previously unselected package libjs-jquery.
+    admin: Preparing to unpack .../63-libjs-jquery_3.6.0+dfsg+~3.5.13-1_all.deb ...
+    admin: Unpacking libjs-jquery (3.6.0+dfsg+~3.5.13-1) ...
+    admin: Selecting previously unselected package libjs-underscore.
+    admin: Preparing to unpack .../64-libjs-underscore_1.13.2~dfsg-2_all.deb ...
+    admin: Unpacking libjs-underscore (1.13.2~dfsg-2) ...
+    admin: Selecting previously unselected package libjs-sphinxdoc.
+    admin: Preparing to unpack .../65-libjs-sphinxdoc_4.3.2-1_all.deb ...
+    admin: Unpacking libjs-sphinxdoc (4.3.2-1) ...
+    admin: Selecting previously unselected package zlib1g-dev:amd64.
+    admin: Preparing to unpack .../66-zlib1g-dev_1%3a1.2.11.dfsg-2ubuntu9.2_amd64.deb ...
+    admin: Unpacking zlib1g-dev:amd64 (1:1.2.11.dfsg-2ubuntu9.2) ...
+    admin: Selecting previously unselected package libpython3.10-dev:amd64.
+    admin: Preparing to unpack .../67-libpython3.10-dev_3.10.12-1~22.04.13_amd64.deb ...
+    admin: Unpacking libpython3.10-dev:amd64 (3.10.12-1~22.04.13) ...
+    admin: Selecting previously unselected package libpython3-dev:amd64.
+    admin: Preparing to unpack .../68-libpython3-dev_3.10.6-1~22.04.1_amd64.deb ...
+    admin: Unpacking libpython3-dev:amd64 (3.10.6-1~22.04.1) ...
+    admin: Selecting previously unselected package manpages-dev.
+    admin: Preparing to unpack .../69-manpages-dev_5.10-1ubuntu1_all.deb ...
+    admin: Unpacking manpages-dev (5.10-1ubuntu1) ...
+    admin: Selecting previously unselected package python3.10-dev.
+    admin: Preparing to unpack .../70-python3.10-dev_3.10.12-1~22.04.13_amd64.deb ...
+    admin: Unpacking python3.10-dev (3.10.12-1~22.04.13) ...
+    admin: Selecting previously unselected package python3-dev.
+    admin: Preparing to unpack .../71-python3-dev_3.10.6-1~22.04.1_amd64.deb ...
+    admin: Unpacking python3-dev (3.10.6-1~22.04.1) ...
+    admin: Selecting previously unselected package python3-wheel.
+    admin: Preparing to unpack .../72-python3-wheel_0.37.1-2ubuntu0.22.04.1_all.deb ...
+    admin: Unpacking python3-wheel (0.37.1-2ubuntu0.22.04.1) ...
+    admin: Selecting previously unselected package python3-pip.
+    admin: Preparing to unpack .../73-python3-pip_22.0.2+dfsg-1ubuntu0.7_all.deb ...
+    admin: Unpacking python3-pip (22.0.2+dfsg-1ubuntu0.7) ...
+    admin: Selecting previously unselected package sshpass.
+    admin: Preparing to unpack .../74-sshpass_1.09-1_amd64.deb ...
+    admin: Unpacking sshpass (1.09-1) ...
+    admin: Setting up javascript-common (11+nmu1) ...
+    admin: Setting up gcc-11-base:amd64 (11.4.0-1ubuntu1~22.04.2) ...
+    admin: Setting up manpages-dev (5.10-1ubuntu1) ...
+    admin: Setting up libxau6:amd64 (1:1.0.9-1build5) ...
+    admin: Setting up libxdmcp6:amd64 (1:1.1.3-0ubuntu5) ...
+    admin: Setting up lto-disabled-list (24) ...
+    admin: Setting up libxcb1:amd64 (1.14-3ubuntu3) ...
+    admin: Setting up libfile-fcntllock-perl (0.22-3build7) ...
+    admin: Setting up libalgorithm-diff-perl (1.201-1) ...
+    admin: Setting up libdeflate0:amd64 (1.10-2) ...
+    admin: Setting up linux-libc-dev:amd64 (5.15.0-164.174) ...
+    admin: Setting up libgomp1:amd64 (12.3.0-1ubuntu1~22.04.2) ...
+    admin: Setting up bzip2 (1.0.8-5build1) ...
+    admin: Setting up sshpass (1.09-1) ...
+    admin: Setting up python3-wheel (0.37.1-2ubuntu0.22.04.1) ...
+    admin: Setting up libjbig0:amd64 (2.1-3.1ubuntu0.22.04.1) ...
+    admin: Setting up libfakeroot:amd64 (1.28-1ubuntu1) ...
+    admin: Setting up libasan6:amd64 (11.4.0-1ubuntu1~22.04.2) ...
+    admin: Setting up fakeroot (1.28-1ubuntu1) ...
+    admin: update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
+    admin: Setting up libtirpc-dev:amd64 (1.3.2-2ubuntu0.1) ...
+    admin: Setting up rpcsvc-proto (1.4.2-0ubuntu6) ...
+    admin: Setting up libx11-data (2:1.7.5-1ubuntu0.3) ...
+    admin: Setting up make (4.3-4.1build1) ...
+    admin: Setting up libquadmath0:amd64 (12.3.0-1ubuntu1~22.04.2) ...
+    admin: Setting up libmpc3:amd64 (1.2.1-2build1) ...
+    admin: Setting up libatomic1:amd64 (12.3.0-1ubuntu1~22.04.2) ...
+    admin: Setting up libpython3.10-minimal:amd64 (3.10.12-1~22.04.13) ...
+    admin: Setting up fonts-dejavu-core (2.37-2build1) ...
+    admin: Setting up python3-pip (22.0.2+dfsg-1ubuntu0.7) ...
+    admin: Setting up libjpeg-turbo8:amd64 (2.1.2-0ubuntu1) ...
+    admin: Setting up libdpkg-perl (1.21.1ubuntu2.6) ...
+    admin: Setting up libwebp7:amd64 (1.2.2-2ubuntu0.22.04.2) ...
+    admin: Setting up libubsan1:amd64 (12.3.0-1ubuntu1~22.04.2) ...
+    admin: Setting up libnsl-dev:amd64 (1.3.0-2build2) ...
+    admin: Setting up libcrypt-dev:amd64 (1:4.4.27-1) ...
+    admin: Setting up libx11-6:amd64 (2:1.7.5-1ubuntu0.3) ...
+    admin: Setting up libjs-jquery (3.6.0+dfsg+~3.5.13-1) ...
+    admin: Setting up libisl23:amd64 (0.24-2build1) ...
+    admin: Setting up libc-dev-bin (2.35-0ubuntu3.11) ...
+    admin: Setting up libalgorithm-diff-xs-perl (0.04-6build3) ...
+    admin: Setting up libcc1-0:amd64 (12.3.0-1ubuntu1~22.04.2) ...
+    admin: Setting up liblsan0:amd64 (12.3.0-1ubuntu1~22.04.2) ...
+    admin: Setting up libitm1:amd64 (12.3.0-1ubuntu1~22.04.2) ...
+    admin: Setting up libjs-underscore (1.13.2~dfsg-2) ...
+    admin: Setting up libalgorithm-merge-perl (0.08-3) ...
+    admin: Setting up libtsan0:amd64 (11.4.0-1ubuntu1~22.04.2) ...
+    admin: Setting up libjpeg8:amd64 (8c-2ubuntu10) ...
+    admin: Setting up cpp-11 (11.4.0-1ubuntu1~22.04.2) ...
+    admin: Setting up libxpm4:amd64 (1:3.5.12-1ubuntu0.22.04.2) ...
+    admin: Setting up fontconfig-config (2.13.1-4.2ubuntu5) ...
+    admin: Setting up python3.10-minimal (3.10.12-1~22.04.13) ...
+    admin: Setting up dpkg-dev (1.21.1ubuntu2.6) ...
+    admin: Setting up libpython3.10-stdlib:amd64 (3.10.12-1~22.04.13) ...
+    admin: Setting up libjs-sphinxdoc (4.3.2-1) ...
+    admin: Setting up libgcc-11-dev:amd64 (11.4.0-1ubuntu1~22.04.2) ...
+    admin: Setting up gcc-11 (11.4.0-1ubuntu1~22.04.2) ...
+    admin: Setting up cpp (4:11.2.0-1ubuntu1) ...
+    admin: Setting up libc6-dev:amd64 (2.35-0ubuntu3.11) ...
+    admin: Setting up libtiff5:amd64 (4.3.0-6ubuntu0.12) ...
+    admin: Setting up libfontconfig1:amd64 (2.13.1-4.2ubuntu5) ...
+    admin: Setting up libpython3.10:amd64 (3.10.12-1~22.04.13) ...
+    admin: Setting up python3.10 (3.10.12-1~22.04.13) ...
+    admin: Setting up gcc (4:11.2.0-1ubuntu1) ...
+    admin: Setting up libexpat1-dev:amd64 (2.4.7-1ubuntu0.6) ...
+    admin: Setting up libgd3:amd64 (2.3.0-2ubuntu2.3) ...
+    admin: Setting up libstdc++-11-dev:amd64 (11.4.0-1ubuntu1~22.04.2) ...
+    admin: Setting up zlib1g-dev:amd64 (1:1.2.11.dfsg-2ubuntu9.2) ...
+    admin: Setting up libc-devtools (2.35-0ubuntu3.11) ...
+    admin: Setting up g++-11 (11.4.0-1ubuntu1~22.04.2) ...
+    admin: Setting up libpython3.10-dev:amd64 (3.10.12-1~22.04.13) ...
+    admin: Setting up python3.10-dev (3.10.12-1~22.04.13) ...
+    admin: Setting up g++ (4:11.2.0-1ubuntu1) ...
+    admin: update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+    admin: Setting up build-essential (12.9ubuntu3) ...
+    admin: Setting up libpython3-dev:amd64 (3.10.6-1~22.04.1) ...
+    admin: Setting up python3-dev (3.10.6-1~22.04.1) ...
+    admin: Processing triggers for man-db (2.10.2-1) ...
+    admin: Processing triggers for libc-bin (2.35-0ubuntu3.11) ...
+    admin: 
+    admin: Running kernel seems to be up-to-date.
+    admin: 
+    admin: Services to be restarted:
+    admin:  systemctl restart apt-news.service
+    admin: 
+    admin: Service restarts being deferred:
+    admin:  systemctl restart networkd-dispatcher.service
+    admin: 
+    admin: No containers need to be restarted.
+    admin: 
+    admin: No user sessions are running outdated binaries.
+    admin: 
+    admin: No VM guests are running outdated hypervisor (qemu) binaries on this host.
+    admin: Hit:1 http://us.archive.ubuntu.com/ubuntu jammy InRelease
+    admin: Hit:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+    admin: Get:3 https://ppa.launchpadcontent.net/ansible/ansible/ubuntu jammy InRelease [18.0 kB]
+    admin: Hit:4 http://us.archive.ubuntu.com/ubuntu jammy-updates InRelease
+    admin: Hit:5 http://us.archive.ubuntu.com/ubuntu jammy-backports InRelease
+    admin: Get:6 https://ppa.launchpadcontent.net/ansible/ansible/ubuntu jammy/main amd64 Packages [1,124 B]
+    admin: Get:7 https://ppa.launchpadcontent.net/ansible/ansible/ubuntu jammy/main Translation-en [752 B]
+    admin: Fetched 19.9 kB in 1s (37.7 kB/s)
+    admin: Reading package lists...
+    admin: Repository: 'deb https://ppa.launchpadcontent.net/ansible/ansible/ubuntu/ jammy main'
+    admin: Description:
+    admin: Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy. Avoid writing scripts or custom code to deploy and update your applications— automate in a language that approaches plain English, using SSH, with no agents to install on remote systems.
+    admin: 
+    admin: http://ansible.com/
+    admin: 
+    admin: If you face any issues while installing Ansible PPA, file an issue here:
+    admin: https://github.com/ansible-community/ppa/issues
+    admin: More info: https://launchpad.net/~ansible/+archive/ubuntu/ansible
+    admin: Adding repository.
+    admin: Adding deb entry to /etc/apt/sources.list.d/ansible-ubuntu-ansible-jammy.list
+    admin: Adding disabled deb-src entry to /etc/apt/sources.list.d/ansible-ubuntu-ansible-jammy.list
+    admin: Adding key to /etc/apt/trusted.gpg.d/ansible-ubuntu-ansible.gpg with fingerprint 6125E2A8C77F2818FB7BD15B93C4A3FD7BB9C367
+    admin: Hit:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+    admin: Hit:2 https://ppa.launchpadcontent.net/ansible/ansible/ubuntu jammy InRelease
+    admin: Hit:3 http://us.archive.ubuntu.com/ubuntu jammy InRelease
+    admin: Hit:4 http://us.archive.ubuntu.com/ubuntu jammy-updates InRelease
+    admin: Hit:5 http://us.archive.ubuntu.com/ubuntu jammy-backports InRelease
+    admin: Reading package lists...
+    admin: Reading package lists...
+    admin: Building dependency tree...
+    admin: Reading state information...
+    admin: The following additional packages will be installed:
+    admin:   ansible-core python3-jmespath python3-kerberos python3-nacl
+    admin:   python3-ntlm-auth python3-paramiko python3-requests-kerberos
+    admin:   python3-requests-ntlm python3-resolvelib python3-winrm python3-xmltodict
+    admin: Suggested packages:
+    admin:   python-nacl-doc python3-gssapi python3-invoke
+    admin: The following NEW packages will be installed:
+    admin:   ansible ansible-core python3-jmespath python3-kerberos python3-nacl
+    admin:   python3-ntlm-auth python3-paramiko python3-requests-kerberos
+    admin:   python3-requests-ntlm python3-resolvelib python3-winrm python3-xmltodict
+    admin: 0 upgraded, 12 newly installed, 0 to remove and 45 not upgraded.
+    admin: Need to get 19.2 MB of archives.
+    admin: After this operation, 213 MB of additional disk space will be used.
+    admin: Get:1 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-resolvelib all 0.8.1-1 [23.6 kB]
+    admin: Get:2 https://ppa.launchpadcontent.net/ansible/ansible/ubuntu jammy/main amd64 ansible-core all 2.17.14-1ppa~jammy [1,017 kB]
+    admin: Get:3 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 python3-jmespath all 0.10.0-1 [21.7 kB]
+    admin: Get:4 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-kerberos amd64 1.1.14-3.1build5 [23.0 kB]
+    admin: Get:5 http://us.archive.ubuntu.com/ubuntu jammy/main amd64 python3-nacl amd64 1.5.0-2 [63.1 kB]
+    admin: Get:6 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-ntlm-auth all 1.4.0-1 [20.4 kB]
+    admin: Get:7 https://ppa.launchpadcontent.net/ansible/ansible/ubuntu jammy/main amd64 ansible all 10.7.0-1ppa~jammy [17.9 MB]
+    admin: Get:8 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-paramiko all 2.9.3-0ubuntu1.3 [134 kB]
+    admin: Get:9 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-requests-kerberos all 0.12.0-2 [11.9 kB]
+    admin: Get:10 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-requests-ntlm all 1.1.0-1.1 [6,160 B]
+    admin: Get:11 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-xmltodict all 0.12.0-2 [12.6 kB]
+    admin: Get:12 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-winrm all 0.3.0-2 [21.7 kB]
+    admin: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    admin: Fetched 19.2 MB in 16s (1,173 kB/s)
+    admin: Selecting previously unselected package python3-resolvelib.
+    admin: (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 81046 files and directories currently installed.)
+    admin: Preparing to unpack .../00-python3-resolvelib_0.8.1-1_all.deb ...
+    admin: Unpacking python3-resolvelib (0.8.1-1) ...
+    admin: Selecting previously unselected package ansible-core.
+    admin: Preparing to unpack .../01-ansible-core_2.17.14-1ppa~jammy_all.deb ...
+    admin: Unpacking ansible-core (2.17.14-1ppa~jammy) ...
+    admin: Selecting previously unselected package ansible.
+    admin: Preparing to unpack .../02-ansible_10.7.0-1ppa~jammy_all.deb ...
+    admin: Unpacking ansible (10.7.0-1ppa~jammy) ...
+    admin: Selecting previously unselected package python3-jmespath.
+    admin: Preparing to unpack .../03-python3-jmespath_0.10.0-1_all.deb ...
+    admin: Unpacking python3-jmespath (0.10.0-1) ...
+    admin: Selecting previously unselected package python3-kerberos.
+    admin: Preparing to unpack .../04-python3-kerberos_1.1.14-3.1build5_amd64.deb ...
+    admin: Unpacking python3-kerberos (1.1.14-3.1build5) ...
+    admin: Selecting previously unselected package python3-nacl.
+    admin: Preparing to unpack .../05-python3-nacl_1.5.0-2_amd64.deb ...
+    admin: Unpacking python3-nacl (1.5.0-2) ...
+    admin: Selecting previously unselected package python3-ntlm-auth.
+    admin: Preparing to unpack .../06-python3-ntlm-auth_1.4.0-1_all.deb ...
+    admin: Unpacking python3-ntlm-auth (1.4.0-1) ...
+    admin: Selecting previously unselected package python3-paramiko.
+    admin: Preparing to unpack .../07-python3-paramiko_2.9.3-0ubuntu1.3_all.deb ...
+    admin: Unpacking python3-paramiko (2.9.3-0ubuntu1.3) ...
+    admin: Selecting previously unselected package python3-requests-kerberos.
+    admin: Preparing to unpack .../08-python3-requests-kerberos_0.12.0-2_all.deb ...
+    admin: Unpacking python3-requests-kerberos (0.12.0-2) ...
+    admin: Selecting previously unselected package python3-requests-ntlm.
+    admin: Preparing to unpack .../09-python3-requests-ntlm_1.1.0-1.1_all.deb ...
+    admin: Unpacking python3-requests-ntlm (1.1.0-1.1) ...
+    admin: Selecting previously unselected package python3-xmltodict.
+    admin: Preparing to unpack .../10-python3-xmltodict_0.12.0-2_all.deb ...
+    admin: Unpacking python3-xmltodict (0.12.0-2) ...
+    admin: Selecting previously unselected package python3-winrm.
+    admin: Preparing to unpack .../11-python3-winrm_0.3.0-2_all.deb ...
+    admin: Unpacking python3-winrm (0.3.0-2) ...
+    admin: Setting up python3-ntlm-auth (1.4.0-1) ...
+    admin: Setting up python3-resolvelib (0.8.1-1) ...
+    admin: Setting up python3-kerberos (1.1.14-3.1build5) ...
+    admin: Setting up ansible-core (2.17.14-1ppa~jammy) ...
+    admin: Setting up python3-xmltodict (0.12.0-2) ...
+    admin: Setting up python3-jmespath (0.10.0-1) ...
+    admin: Setting up python3-requests-kerberos (0.12.0-2) ...
+    admin: Setting up ansible (10.7.0-1ppa~jammy) ...
+    admin: Setting up python3-nacl (1.5.0-2) ...
+    admin: Setting up python3-requests-ntlm (1.1.0-1.1) ...
+    admin: Setting up python3-winrm (0.3.0-2) ...
+    admin: Setting up python3-paramiko (2.9.3-0ubuntu1.3) ...
+    admin: Processing triggers for man-db (2.10.2-1) ...
+    admin: 
+    admin: Running kernel seems to be up-to-date.
+    admin: 
+    admin: Services to be restarted:
+    admin:  systemctl restart apt-news.service
+    admin: 
+    admin: Service restarts being deferred:
+    admin:  systemctl restart networkd-dispatcher.service
+    admin: 
+    admin: No containers need to be restarted.
+    admin: 
+    admin: No user sessions are running outdated binaries.
+    admin: 
+    admin: No VM guests are running outdated hypervisor (qemu) binaries on this host.
+    admin: Starting galaxy collection install process
+    admin: Nothing to do. All requested collections are already installed. If you want to reinstall them, consider using `--force`.
+    admin: Requirement already satisfied: pywinrm in /usr/lib/python3/dist-packages (0.3.0)
+    admin: Requirement already satisfied: requests-ntlm in /usr/lib/python3/dist-packages (1.1.0)
+    admin: Collecting passlib
+    admin:   Downloading passlib-1.7.4-py2.py3-none-any.whl (525 kB)
+    admin:      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 525.6/525.6 KB 7.0 MB/s eta 0:00:00
+    admin: Installing collected packages: passlib
+    admin: Successfully installed passlib-1.7.4
+    admin: Generating public/private rsa key pair.
+    admin: Your identification has been saved in /home/vagrant/.ssh/id_rsa
+    admin: Your public key has been saved in /home/vagrant/.ssh/id_rsa.pub
+    admin: The key fingerprint is:
+    admin: SHA256:lc4luO6IPw2MiHt0Y6LSaCrtR1M5PgvijqvzyHYi/xg vagrant@admin
+    admin: The key's randomart image is:
+    admin: +---[RSA 4096]----+
+    admin: |                 |
+    admin: |         . .     |
+    admin: |       .. + .    |
+    admin: |      +  = o     |
+    admin: | . . = .S o      |
+    admin: |. = O =.         |
+    admin: | OE* + =.        |
+    admin: |X*=+..oo.        |
+    admin: |#XOoo.o..        |
+    admin: +----[SHA256]-----+
+==> node01: Cloning VMware VM: 'bento/rockylinux-9'. This can take some time...
+==> node01: Verifying vmnet devices are healthy...
+==> node01: Preparing network adapters...
+==> node01: Fixed port collision for 22 => 2222. Now on port 2200.
+==> node01: Starting the VMware VM...
+==> node01: Waiting for the VM to receive an address...
+==> node01: Forwarding ports...
+    node01: -- 80 => 8081
+    node01: -- 22 => 2200
+==> node01: Waiting for machine to boot. This may take a few minutes...
+    node01: SSH address: 127.0.0.1:2200
+    node01: SSH username: vagrant
+    node01: SSH auth method: private key
+    node01: 
+    node01: Vagrant insecure key detected. Vagrant will automatically replace
+    node01: this with a newly generated keypair for better security.
+    node01: 
+    node01: Inserting generated public key within guest...
+    node01: Removing insecure key from the guest if it's present...
+    node01: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> node01: Machine booted and ready!
+==> node01: Setting hostname...
+==> node01: Configuring network adapters within the VM...
+==> node01: Waiting for HGFS to become available...
+==> node01: Enabling and configuring shared folders...
+    node01: -- C:/Users/Marwa/Desktop/cerberus: /vagrant
+==> node01: Running provisioner: shell...
+    node01: Running: inline script
+    node01: Rocky Linux 9 - BaseOS                          8.1 MB/s | 7.5 MB     00:00
+    node01: Rocky Linux 9 - AppStream                       8.8 MB/s |  12 MB     00:01
+    node01: Rocky Linux 9 - Extras                           46 kB/s |  17 kB     00:00
+    node01: Package python3-3.9.21-2.el9_6.2.x86_64 is already installed.
+    node01: Dependencies resolved.
+    node01: ================================================================================
+    node01:  Package                       Arch      Version             Repository    Size
+    node01: ================================================================================
+    node01: Installing:
+    node01:  python3-pip                   noarch    21.3.1-1.el9        appstream    1.7 M
+    node01: Upgrading:
+    node01:  openssl                       x86_64    1:3.5.1-4.el9_7     baseos       1.4 M
+    node01:  openssl-libs                  x86_64    1:3.5.1-4.el9_7     baseos       2.3 M
+    node01:  python-unversioned-command    noarch    3.9.25-2.el9_7      appstream    9.2 k
+    node01:  python3                       x86_64    3.9.25-2.el9_7      baseos        26 k
+    node01:  python3-libs                  x86_64    3.9.25-2.el9_7      baseos       7.5 M
+    node01: Installing dependencies:
+    node01:  openssl-fips-provider         x86_64    1:3.5.1-4.el9_7     baseos       812 k
+    node01: 
+    node01: Transaction Summary
+    node01: ================================================================================
+    node01: Install  2 Packages
+    node01: Upgrade  5 Packages
+    node01: 
+    node01: Total download size: 14 M
+    node01: Downloading Packages:
+    node01: (1/7): python3-pip-21.3.1-1.el9.noarch.rpm       11 MB/s | 1.7 MB     00:00
+    node01: (2/7): openssl-fips-provider-3.5.1-4.el9_7.x86_ 2.2 MB/s | 812 kB     00:00
+    node01: (3/7): openssl-libs-3.5.1-4.el9_7.x86_64.rpm     10 MB/s | 2.3 MB     00:00
+    node01: (4/7): python3-3.9.25-2.el9_7.x86_64.rpm        1.2 MB/s |  26 kB     00:00
+    node01: (5/7): python-unversioned-command-3.9.25-2.el9_ 362 kB/s | 9.2 kB     00:00
+    node01: (6/7): python3-libs-3.9.25-2.el9_7.x86_64.rpm    60 MB/s | 7.5 MB     00:00
+    node01: (7/7): openssl-3.5.1-4.el9_7.x86_64.rpm         2.5 MB/s | 1.4 MB     00:00
+    node01: --------------------------------------------------------------------------------
+    node01: Total                                            15 MB/s |  14 MB     00:00
+    node01: Rocky Linux 9 - BaseOS                          1.7 MB/s | 1.7 kB     00:00
+    node01: Importing GPG key 0x350D275D:
+    node01:  Userid     : "Rocky Enterprise Software Foundation - Release key 2022 <releng@rockylinux.org>"
+    node01:  Fingerprint: 21CB 256A E16F C54C 6E65 2949 702D 426D 350D 275D
+    node01:  From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-Rocky-9
+    node01: Key imported successfully
+    node01: Running transaction check
+    node01: Transaction check succeeded.
+    node01: Running transaction test
+    node01: Transaction test succeeded.
+    node01: Running transaction
+    node01:   Preparing        :                                                        1/1
+    node01:   Upgrading        : openssl-libs-1:3.5.1-4.el9_7.x86_64                   1/12
+    node01:   Installing       : openssl-fips-provider-1:3.5.1-4.el9_7.x86_64          2/12
+    node01:   Upgrading        : python-unversioned-command-3.9.25-2.el9_7.noarch      3/12
+    node01:   Upgrading        : python3-3.9.25-2.el9_7.x86_64                         4/12
+    node01:   Upgrading        : python3-libs-3.9.25-2.el9_7.x86_64                    5/12
+    node01:   Installing       : python3-pip-21.3.1-1.el9.noarch                       6/12
+    node01:   Upgrading        : openssl-1:3.5.1-4.el9_7.x86_64                        7/12
+    node01:   Cleanup          : openssl-1:3.2.2-6.el9_5.1.x86_64                      8/12
+    node01:   Cleanup          : python3-3.9.21-2.el9_6.2.x86_64                       9/12
+    node01:   Cleanup          : python-unversioned-command-3.9.21-2.el9_6.2.noarch   10/12
+    node01:   Cleanup          : python3-libs-3.9.21-2.el9_6.2.x86_64                 11/12
+    node01:   Cleanup          : openssl-libs-1:3.2.2-6.el9_5.1.x86_64                12/12
+    node01:   Running scriptlet: openssl-libs-1:3.2.2-6.el9_5.1.x86_64                12/12
+    node01:   Verifying        : openssl-fips-provider-1:3.5.1-4.el9_7.x86_64          1/12
+    node01:   Verifying        : python3-pip-21.3.1-1.el9.noarch                       2/12
+    node01:   Verifying        : openssl-1:3.5.1-4.el9_7.x86_64                        3/12
+    node01:   Verifying        : openssl-1:3.2.2-6.el9_5.1.x86_64                      4/12
+    node01:   Verifying        : openssl-libs-1:3.5.1-4.el9_7.x86_64                   5/12
+    node01:   Verifying        : openssl-libs-1:3.2.2-6.el9_5.1.x86_64                 6/12
+    node01:   Verifying        : python3-3.9.25-2.el9_7.x86_64                         7/12
+    node01:   Verifying        : python3-3.9.21-2.el9_6.2.x86_64                       8/12
+    node01:   Verifying        : python3-libs-3.9.25-2.el9_7.x86_64                    9/12
+    node01:   Verifying        : python3-libs-3.9.21-2.el9_6.2.x86_64                 10/12
+    node01:   Verifying        : python-unversioned-command-3.9.25-2.el9_7.noarch     11/12
+    node01:   Verifying        : python-unversioned-command-3.9.21-2.el9_6.2.noarch   12/12
+    node01: 
+    node01: Upgraded:
+    node01:   openssl-1:3.5.1-4.el9_7.x86_64
+    node01:   openssl-libs-1:3.5.1-4.el9_7.x86_64
+    node01:   python-unversioned-command-3.9.25-2.el9_7.noarch
+    node01:   python3-3.9.25-2.el9_7.x86_64
+    node01:   python3-libs-3.9.25-2.el9_7.x86_64
+    node01: Installed:
+    node01:   openssl-fips-provider-1:3.5.1-4.el9_7.x86_64  python3-pip-21.3.1-1.el9.noarch
+    node01: 
+    node01: Complete!
+==> node02: Cloning VMware VM: 'bento/rockylinux-9'. This can take some time...
+==> node02: Verifying vmnet devices are healthy...
+==> node02: Preparing network adapters...
+==> node02: Fixed port collision for 22 => 2222. Now on port 2201.
+==> node02: Starting the VMware VM...
+==> node02: Waiting for the VM to receive an address...
+==> node02: Forwarding ports...
+    node02: -- 80 => 8082
+    node02: -- 22 => 2201
+==> node02: Waiting for machine to boot. This may take a few minutes...
+    node02: SSH address: 127.0.0.1:2201
+    node02: SSH username: vagrant
+    node02: SSH auth method: private key
+    node02: 
+    node02: Vagrant insecure key detected. Vagrant will automatically replace
+    node02: this with a newly generated keypair for better security.
+    node02: 
+    node02: Inserting generated public key within guest...
+    node02: Removing insecure key from the guest if it's present...
+    node02: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> node02: Machine booted and ready!
+==> node02: Setting hostname...
+==> node02: Configuring network adapters within the VM...
+==> node02: Waiting for HGFS to become available...
+==> node02: Enabling and configuring shared folders...
+    node02: -- C:/Users/Marwa/Desktop/cerberus: /vagrant
+==> node02: Running provisioner: shell...
+    node02: Running: inline script
+    node02: Rocky Linux 9 - BaseOS                           14 MB/s | 7.5 MB     00:00
+    node02: Rocky Linux 9 - AppStream                        19 MB/s |  12 MB     00:00
+    node02: Rocky Linux 9 - Extras                           35 kB/s |  17 kB     00:00
+    node02: Package python3-3.9.21-2.el9_6.2.x86_64 is already installed.
+    node02: Dependencies resolved.
+    node02: ================================================================================
+    node02:  Package                       Arch      Version             Repository    Size
+    node02: ================================================================================
+    node02: Installing:
+    node02:  python3-pip                   noarch    21.3.1-1.el9        appstream    1.7 M
+    node02: Upgrading:
+    node02:  openssl                       x86_64    1:3.5.1-4.el9_7     baseos       1.4 M
+    node02:  openssl-libs                  x86_64    1:3.5.1-4.el9_7     baseos       2.3 M
+    node02:  python-unversioned-command    noarch    3.9.25-2.el9_7      appstream    9.2 k
+    node02:  python3                       x86_64    3.9.25-2.el9_7      baseos        26 k
+    node02:  python3-libs                  x86_64    3.9.25-2.el9_7      baseos       7.5 M
+    node02: Installing dependencies:
+    node02:  openssl-fips-provider         x86_64    1:3.5.1-4.el9_7     baseos       812 k
+    node02: 
+    node02: Transaction Summary
+    node02: ================================================================================
+    node02: Install  2 Packages
+    node02: Upgrade  5 Packages
+    node02: 
+    node02: Total download size: 14 M
+    node02: Downloading Packages:
+    node02: (1/7): openssl-fips-provider-3.5.1-4.el9_7.x86_ 5.3 MB/s | 812 kB     00:00
+    node02: (2/7): openssl-3.5.1-4.el9_7.x86_64.rpm         8.4 MB/s | 1.4 MB     00:00
+    node02: (3/7): openssl-libs-3.5.1-4.el9_7.x86_64.rpm     27 MB/s | 2.3 MB     00:00
+    node02: (4/7): python3-3.9.25-2.el9_7.x86_64.rpm        378 kB/s |  26 kB     00:00
+    node02: (5/7): python3-pip-21.3.1-1.el9.noarch.rpm      5.9 MB/s | 1.7 MB     00:00
+    node02: (6/7): python-unversioned-command-3.9.25-2.el9_  67 kB/s | 9.2 kB     00:00
+    node02: (7/7): python3-libs-3.9.25-2.el9_7.x86_64.rpm    47 MB/s | 7.5 MB     00:00
+    node02: --------------------------------------------------------------------------------
+    node02: Total                                            17 MB/s |  14 MB     00:00
+    node02: Rocky Linux 9 - BaseOS                          1.7 MB/s | 1.7 kB     00:00
+    node02: Importing GPG key 0x350D275D:
+    node02:  Userid     : "Rocky Enterprise Software Foundation - Release key 2022 <releng@rockylinux.org>"
+    node02:  Fingerprint: 21CB 256A E16F C54C 6E65 2949 702D 426D 350D 275D
+    node02:  From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-Rocky-9
+    node02: Key imported successfully
+    node02: Running transaction check
+    node02: Transaction check succeeded.
+    node02: Running transaction test
+    node02: Transaction test succeeded.
+    node02: Running transaction
+    node02:   Preparing        :                                                        1/1
+    node02:   Upgrading        : openssl-libs-1:3.5.1-4.el9_7.x86_64                   1/12
+    node02:   Installing       : openssl-fips-provider-1:3.5.1-4.el9_7.x86_64          2/12
+    node02:   Upgrading        : python-unversioned-command-3.9.25-2.el9_7.noarch      3/12
+    node02:   Upgrading        : python3-3.9.25-2.el9_7.x86_64                         4/12
+    node02:   Upgrading        : python3-libs-3.9.25-2.el9_7.x86_64                    5/12
+    node02:   Installing       : python3-pip-21.3.1-1.el9.noarch                       6/12
+    node02:   Upgrading        : openssl-1:3.5.1-4.el9_7.x86_64                        7/12
+    node02:   Cleanup          : openssl-1:3.2.2-6.el9_5.1.x86_64                      8/12
+    node02:   Cleanup          : python3-3.9.21-2.el9_6.2.x86_64                       9/12
+    node02:   Cleanup          : python-unversioned-command-3.9.21-2.el9_6.2.noarch   10/12
+    node02:   Cleanup          : python3-libs-3.9.21-2.el9_6.2.x86_64                 11/12
+    node02:   Cleanup          : openssl-libs-1:3.2.2-6.el9_5.1.x86_64                12/12
+    node02:   Running scriptlet: openssl-libs-1:3.2.2-6.el9_5.1.x86_64                12/12
+    node02:   Verifying        : openssl-fips-provider-1:3.5.1-4.el9_7.x86_64          1/12
+    node02:   Verifying        : python3-pip-21.3.1-1.el9.noarch                       2/12
+    node02:   Verifying        : openssl-1:3.5.1-4.el9_7.x86_64                        3/12
+    node02:   Verifying        : openssl-1:3.2.2-6.el9_5.1.x86_64                      4/12
+    node02:   Verifying        : openssl-libs-1:3.5.1-4.el9_7.x86_64                   5/12
+    node02:   Verifying        : openssl-libs-1:3.2.2-6.el9_5.1.x86_64                 6/12
+    node02:   Verifying        : python3-3.9.25-2.el9_7.x86_64                         7/12
+    node02:   Verifying        : python3-3.9.21-2.el9_6.2.x86_64                       8/12
+    node02:   Verifying        : python3-libs-3.9.25-2.el9_7.x86_64                    9/12
+    node02:   Verifying        : python3-libs-3.9.21-2.el9_6.2.x86_64                 10/12
+    node02:   Verifying        : python-unversioned-command-3.9.25-2.el9_7.noarch     11/12
+    node02:   Verifying        : python-unversioned-command-3.9.21-2.el9_6.2.noarch   12/12
+    node02: 
+    node02: Upgraded:
+    node02:   openssl-1:3.5.1-4.el9_7.x86_64
+    node02:   openssl-libs-1:3.5.1-4.el9_7.x86_64
+    node02:   python-unversioned-command-3.9.25-2.el9_7.noarch
+    node02:   python3-3.9.25-2.el9_7.x86_64
+    node02:   python3-libs-3.9.25-2.el9_7.x86_64
+    node02: Installed:
+    node02:   openssl-fips-provider-1:3.5.1-4.el9_7.x86_64  python3-pip-21.3.1-1.el9.noarch
+    node02: 
+    node02: Complete!
+[15:20:35] OK: Linux VMs
+
+0% [Working]
+            
+Hit:1 https://ppa.launchpadcontent.net/ansible/ansible/ubuntu jammy InRelease
+
+0% [Waiting for headers] [Waiting for headers]
+                                              
+Hit:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+
+                                              
+0% [Waiting for headers]
+                        
+Hit:3 http://us.archive.ubuntu.com/ubuntu jammy InRelease
+
+0% [Waiting for headers]
+0% [Waiting for headers]
+                        
+Hit:4 http://us.archive.ubuntu.com/ubuntu jammy-updates InRelease
+
+0% [Waiting for headers]
+0% [Waiting for headers]
+0% [Waiting for headers]
+                        
+Hit:5 http://us.archive.ubuntu.com/ubuntu jammy-backports InRelease
+
+                        
+0% [Working]
+0% [Working]
+20% [Working]
+             
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 2%
+
+Reading package lists... 2%
+
+Reading package lists... 3%
+
+Reading package lists... 3%
+
+Reading package lists... 3%
+
+Reading package lists... 3%
+
+Reading package lists... 3%
+
+Reading package lists... 3%
+
+Reading package lists... 26%
+
+Reading package lists... 26%
+
+Reading package lists... 37%
+
+Reading package lists... 37%
+
+Reading package lists... 37%
+
+Reading package lists... 37%
+
+Reading package lists... 37%
+
+Reading package lists... 37%
+
+Reading package lists... 44%
+
+Reading package lists... 44%
+
+Reading package lists... 48%
+
+Reading package lists... 48%
+
+Reading package lists... 59%
+
+Reading package lists... 59%
+
+Reading package lists... 65%
+
+Reading package lists... 65%
+
+Reading package lists... 68%
+
+Reading package lists... 68%
+
+Reading package lists... 69%
+
+Reading package lists... 69%
+
+Reading package lists... 69%
+
+Reading package lists... 69%
+
+Reading package lists... 69%
+
+Reading package lists... 69%
+
+Reading package lists... 69%
+
+Reading package lists... 69%
+
+Reading package lists... 69%
+
+Reading package lists... 69%
+
+Reading package lists... 69%
+
+Reading package lists... 69%
+
+Reading package lists... 69%
+
+Reading package lists... 69%
+
+Reading package lists... 75%
+
+Reading package lists... 75%
+
+Reading package lists... 79%
+
+Reading package lists... 79%
+
+Reading package lists... 90%
+
+Reading package lists... 90%
+
+Reading package lists... 96%
+
+Reading package lists... 96%
+
+Reading package lists... 98%
+
+Reading package lists... 98%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... Done
+
+
+Reading package lists... 0%
+
+Reading package lists... 100%
+
+Reading package lists... Done
+
+
+Building dependency tree... 0%
+
+Building dependency tree... 0%
+
+Building dependency tree... 50%
+
+Building dependency tree... 50%
+
+Building dependency tree... Done
+
+
+Reading state information... 0% 
+
+Reading state information... 0%
+
+Reading state information... Done
+
+sshpass is already the newest version (1.09-1).
+0 upgraded, 0 newly installed, 0 to remove and 45 not upgraded.
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/vagrant/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh -o 'StrictHostKeyChecking=no' 'ansible@192.168.56.21'"
+and check to make sure that only the key(s) you wanted were added.
+
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/vagrant/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh -o 'StrictHostKeyChecking=no' 'ansible@192.168.56.22'"
+and check to make sure that only the key(s) you wanted were added.
+
+[15:21:24] START: Ansible Linux
+[1;35m[WARNING]: Ansible is being run in a world writable directory[0m
+[1;35m(/home/vagrant/ansible), ignoring it as an ansible.cfg source. For more[0m
+[1;35minformation see[0m
+[1;35mhttps://docs.ansible.com/ansible/devel/reference_appendices/config.html#cfg-in-[0m
+[1;35mworld-writable-dir[0m
+[1;35m[WARNING]: Found both group and host with same name: admin[0m
+
+PLAY [=== PHASE 1: Installation du serveur Zabbix ===] *************************
+
+TASK [Gathering Facts] *********************************************************
+[1;35m[WARNING]: Platform linux on host admin is using the discovered Python[0m
+[1;35minterpreter at /usr/bin/python3.10, but future installation of another Python[0m
+[1;35minterpreter could change the meaning of that path. See[0m
+[1;35mhttps://docs.ansible.com/ansible-[0m
+[1;35mcore/2.17/reference_appendices/interpreter_discovery.html for more information.[0m
+[0;32mok: [admin][0m
+
+TASK [zabbix-server : Install prerequisites] ***********************************
+[0;33mchanged: [admin][0m
+
+TASK [zabbix-server : Download Zabbix repository package] **********************
+[0;33mchanged: [admin][0m
+
+TASK [zabbix-server : Install Zabbix repository] *******************************
+[0;33mchanged: [admin][0m
+
+TASK [zabbix-server : Update APT cache] ****************************************
+[0;32mok: [admin][0m
+
+TASK [zabbix-server : Install MySQL Server] ************************************
+[0;33mchanged: [admin][0m
+
+TASK [zabbix-server : Start MySQL service] *************************************
+[0;32mok: [admin][0m
+
+TASK [zabbix-server : Install Zabbix packages] *********************************
+[0;33mchanged: [admin][0m
+
+TASK [zabbix-server : Create Zabbix database] **********************************
+[0;33mchanged: [admin][0m
+
+TASK [zabbix-server : Create Zabbix MySQL user] ********************************
+[1;35m[WARNING]: Option column_case_sensitive is not provided. The default is now[0m
+[1;35mfalse, so the column's name will be uppercased. The default will be changed to[0m
+[1;35mtrue in community.mysql 4.0.0.[0m
+[0;33mchanged: [admin][0m
+
+TASK [zabbix-server : Set log_bin_trust_function_creators] *********************
+[0;33mchanged: [admin][0m
+
+TASK [zabbix-server : Check if schema exists] **********************************
+[0;32mok: [admin][0m
+
+TASK [zabbix-server : Import Zabbix schema] ************************************
+[0;33mchanged: [admin][0m
+
+TASK [zabbix-server : Reset log_bin_trust_function_creators] *******************
+[0;33mchanged: [admin][0m
+
+TASK [zabbix-server : Configure Zabbix DB password] ****************************
+[0;33mchanged: [admin][0m
+
+TASK [zabbix-server : Configure Nginx for Zabbix] ******************************
+[0;33mchanged: [admin][0m
+
+TASK [zabbix-server : Remove default Nginx site] *******************************
+[0;33mchanged: [admin][0m
+
+TASK [zabbix-server : Configure Zabbix Frontend] *******************************
+[0;33mchanged: [admin][0m
+
+TASK [zabbix-server : Start Zabbix services] ***********************************
+[0;33mchanged: [admin] => (item=zabbix-server)[0m
+[0;32mok: [admin] => (item=zabbix-agent)[0m
+[0;32mok: [admin] => (item=php8.1-fpm)[0m
+
+TASK [zabbix-server : Restart Nginx] *******************************************
+[0;33mchanged: [admin][0m
+
+TASK [zabbix-server : Wait for Zabbix API] *************************************
+[0;32mok: [admin][0m
+
+TASK [zabbix-server : Authenticate to Zabbix API] ******************************
+[0;32mok: [admin][0m
+
+TASK [zabbix-server : Get Linux servers group] *********************************
+[0;32mok: [admin][0m
+
+TASK [zabbix-server : Get Linux template] **************************************
+[0;32mok: [admin][0m
+
+TASK [zabbix-server : Add node01 to Zabbix] ************************************
+[0;32mok: [admin][0m
+
+TASK [zabbix-server : Add node02 to Zabbix] ************************************
+[0;32mok: [admin][0m
+
+PLAY [=== PHASE 2: Configuration du cluster HA (Node01 & Node02) ===] **********
+
+TASK [Gathering Facts] *********************************************************
+[0;32mok: [node02][0m
+[0;32mok: [node01][0m
+
+TASK [ha-cluster : Enable HA repository] ***************************************
+[0;33mchanged: [node01][0m
+[0;33mchanged: [node02][0m
+
+TASK [ha-cluster : Enable CRB repository] **************************************
+[0;33mchanged: [node01][0m
+[0;33mchanged: [node02][0m
+
+TASK [ha-cluster : Update DNF cache] *******************************************
+[0;32mok: [node01][0m
+[0;32mok: [node02][0m
+
+TASK [ha-cluster : Install HA packages] ****************************************
+[0;33mchanged: [node02][0m
+[0;33mchanged: [node01][0m
+
+TASK [ha-cluster : Allow HA in firewall] ***************************************
+[0;33mchanged: [node01][0m
+[0;33mchanged: [node02][0m
+
+TASK [ha-cluster : Start pcsd] *************************************************
+[0;33mchanged: [node01][0m
+[0;33mchanged: [node02][0m
+
+TASK [ha-cluster : Set hacluster password] *************************************
+[0;33mchanged: [node01][0m
+[0;33mchanged: [node02][0m
+
+TASK [ha-cluster : Wait for pcsd] **********************************************
+[0;32mok: [node02][0m
+[0;32mok: [node01][0m
+
+TASK [ha-cluster : Authenticate nodes (node01 only)] ***************************
+[0;33mchanged: [node01][0m
+
+TASK [ha-cluster : Check cluster status] ***************************************
+[0;32mok: [node01][0m
+[0;32mok: [node02][0m
+
+TASK [ha-cluster : Create cluster] *********************************************
+[0;33mchanged: [node01][0m
+
+TASK [ha-cluster : Wait for sync] **********************************************
+Pausing for 10 seconds
+(ctrl+C then 'C' = continue early, ctrl+C then 'A' = abort)
+
+[0;32mok: [node01][0m
+
+TASK [ha-cluster : Start cluster] **********************************************
+[0;33mchanged: [node01][0m
+
+TASK [ha-cluster : Enable cluster] *********************************************
+[0;33mchanged: [node01][0m
+
+TASK [ha-cluster : Disable STONITH] ********************************************
+[0;33mchanged: [node01][0m
+
+TASK [ha-cluster : Set quorum policy] ******************************************
+[0;33mchanged: [node01][0m
+
+TASK [nginx : Install Nginx] ***************************************************
+[0;33mchanged: [node01][0m
+[0;33mchanged: [node02][0m
+
+TASK [nginx : Create web root] *************************************************
+[0;33mchanged: [node02][0m
+[0;33mchanged: [node01][0m
+
+TASK [nginx : Deploy web page] *************************************************
+[0;33mchanged: [node02][0m
+[0;33mchanged: [node01][0m
+
+TASK [nginx : Configure Nginx] *************************************************
+[0;33mchanged: [node01][0m
+[0;33mchanged: [node02][0m
+
+TASK [nginx : Stop Nginx (managed by cluster)] *********************************
+[0;32mok: [node01][0m
+[0;32mok: [node02][0m
+
+TASK [samba : Install Samba] ***************************************************
+[0;33mchanged: [node02][0m
+[0;33mchanged: [node01][0m
+
+TASK [samba : Create share directory] ******************************************
+[0;33mchanged: [node02][0m
+[0;33mchanged: [node01][0m
+
+TASK [samba : Create test file] ************************************************
+[0;33mchanged: [node01][0m
+[0;33mchanged: [node02][0m
+
+TASK [samba : Configure Samba] *************************************************
+[0;33mchanged: [node02][0m
+[0;33mchanged: [node01][0m
+
+TASK [samba : Stop Samba (managed by cluster)] *********************************
+[0;32mok: [node01] => (item=smb)[0m
+[0;32mok: [node02] => (item=smb)[0m
+[0;32mok: [node01] => (item=nmb)[0m
+[0;32mok: [node02] => (item=nmb)[0m
+
+PLAY [=== PHASE 3: Configuration des ressources du cluster ===] ****************
+
+TASK [Gathering Facts] *********************************************************
+[0;32mok: [node01][0m
+[0;32mok: [node02][0m
+
+TASK [cluster-resources : Wait for cluster] ************************************
+Pausing for 5 seconds
+(ctrl+C then 'C' = continue early, ctrl+C then 'A' = abort)
+
+[0;32mok: [node01][0m
+
+TASK [cluster-resources : Detect NIC] ******************************************
+[0;36mskipping: [node02][0m
+[0;32mok: [node01][0m
+
+TASK [cluster-resources : Set VIP NIC] *****************************************
+[0;36mskipping: [node02][0m
+[0;32mok: [node01][0m
+
+TASK [cluster-resources : Check resources] *************************************
+[0;36mskipping: [node02][0m
+[0;32mok: [node01][0m
+
+TASK [cluster-resources : Create VIP] ******************************************
+[0;33mchanged: [node01][0m
+
+TASK [cluster-resources : Create webserver resource] ***************************
+[0;33mchanged: [node01][0m
+
+TASK [cluster-resources : Create samba resource] *******************************
+[0;33mchanged: [node01][0m
+
+TASK [cluster-resources : Check resource group] ********************************
+[0;36mskipping: [node02][0m
+[0;32mok: [node01][0m
+
+TASK [cluster-resources : Create resource group] *******************************
+[0;33mchanged: [node01][0m
+
+TASK [cluster-resources : Enable resources] ************************************
+[0;33mchanged: [node01][0m
+
+TASK [cluster-resources : Wait for services] ***********************************
+Pausing for 15 seconds
+(ctrl+C then 'C' = continue early, ctrl+C then 'A' = abort)
+
+[0;32mok: [node01][0m
+
+TASK [cluster-resources : Show cluster status] *********************************
+[0;36mskipping: [node02][0m
+[0;32mok: [node01][0m
+
+TASK [cluster-resources : Display status] **************************************
+[0;32mok: [node01] => {[0m
+[0;32m    "msg": [[0m
+[0;32m        "Cluster name: cerberus-cluster",[0m
+[0;32m        "Cluster Summary:",[0m
+[0;32m        "  * Stack: corosync (Pacemaker is running)",[0m
+[0;32m        "  * Current DC: node01 (version 2.1.10-1.el9-5693eaeee) - partition with quorum",[0m
+[0;32m        "  * Last updated: Tue Jan 13 14:24:14 2026 on node01",[0m
+[0;32m        "  * Last change:  Tue Jan 13 14:23:57 2026 by root via root on node01",[0m
+[0;32m        "  * 2 nodes configured",[0m
+[0;32m        "  * 3 resource instances configured",[0m
+[0;32m        "",[0m
+[0;32m        "Node List:",[0m
+[0;32m        "  * Online: [ node01 node02 ]",[0m
+[0;32m        "",[0m
+[0;32m        "Full List of Resources:",[0m
+[0;32m        "  * Resource Group: ha-services:",[0m
+[0;32m        "    * cluster-vip\t(ocf:heartbeat:IPaddr2):\t Started node01",[0m
+[0;32m        "    * webserver\t(systemd:nginx):\t Started node01",[0m
+[0;32m        "    * samba\t(systemd:smb):\t Started node01",[0m
+[0;32m        "",[0m
+[0;32m        "Daemon Status:",[0m
+[0;32m        "  corosync: active/enabled",[0m
+[0;32m        "  pacemaker: active/enabled",[0m
+[0;32m        "  pcsd: active/enabled"[0m
+[0;32m    ][0m
+[0;32m}[0m
+[0;36mskipping: [node02][0m
+
+PLAY [=== PHASE 4: Durcissement de sécurité Linux ===] *************************
+
+TASK [Gathering Facts] *********************************************************
+[0;32mok: [node01][0m
+[0;32mok: [node02][0m
+
+TASK [hardening-linux : Install firewalld] *************************************
+[0;32mok: [node01][0m
+[0;32mok: [node02][0m
+
+TASK [hardening-linux : Start firewalld] ***************************************
+[0;32mok: [node01][0m
+[0;32mok: [node02][0m
+
+TASK [hardening-linux : Allow services] ****************************************
+[0;32mok: [node01] => (item=ssh)[0m
+[0;32mok: [node02] => (item=ssh)[0m
+[0;33mchanged: [node02] => (item=http)[0m
+[0;33mchanged: [node01] => (item=http)[0m
+[0;33mchanged: [node02] => (item=https)[0m
+[0;33mchanged: [node01] => (item=https)[0m
+[0;32mok: [node02] => (item=high-availability)[0m
+[0;32mok: [node01] => (item=high-availability)[0m
+[0;33mchanged: [node02] => (item=samba)[0m
+[0;33mchanged: [node01] => (item=samba)[0m
+[0;33mchanged: [node02] => (item=samba-client)[0m
+[0;33mchanged: [node01] => (item=samba-client)[0m
+
+TASK [hardening-linux : Allow ports] *******************************************
+[0;33mchanged: [node01] => (item=10050/tcp)[0m
+[0;33mchanged: [node02] => (item=10050/tcp)[0m
+[0;33mchanged: [node02] => (item=10051/tcp)[0m
+[0;33mchanged: [node01] => (item=10051/tcp)[0m
+
+TASK [hardening-linux : Disable SSH root login] ********************************
+[0;33mchanged: [node02][0m
+[0;33mchanged: [node01][0m
+
+TASK [hardening-linux : Disable empty passwords] *******************************
+[0;33mchanged: [node02][0m
+[0;33mchanged: [node01][0m
+
+TASK [hardening-linux : Install dnf-automatic] *********************************
+[0;33mchanged: [node02][0m
+[0;33mchanged: [node01][0m
+
+TASK [hardening-linux : Configure security updates] ****************************
+[0;33mchanged: [node01][0m
+[0;33mchanged: [node02][0m
+
+TASK [hardening-linux : Enable auto updates] ***********************************
+[0;33mchanged: [node01][0m
+[0;33mchanged: [node02][0m
+
+TASK [hardening-linux : Enable dnf-automatic timer] ****************************
+[0;33mchanged: [node02][0m
+[0;33mchanged: [node01][0m
+
+TASK [hardening-linux : Install auditd] ****************************************
+[0;32mok: [node02][0m
+[0;32mok: [node01][0m
+
+TASK [hardening-linux : Enable auditd] *****************************************
+[0;32mok: [node02][0m
+[0;32mok: [node01][0m
+
+TASK [hardening-linux : Configure SSH banner] **********************************
+[0;33mchanged: [node02][0m
+[0;33mchanged: [node01][0m
+
+TASK [hardening-linux : Enable SSH banner] *************************************
+[0;33mchanged: [node02][0m
+[0;33mchanged: [node01][0m
+
+RUNNING HANDLER [hardening-linux : restart sshd] *******************************
+[0;33mchanged: [node01][0m
+[0;33mchanged: [node02][0m
+
+PLAY [=== PHASE 5: Installation des agents Zabbix ===] *************************
+
+TASK [Gathering Facts] *********************************************************
+[0;32mok: [node02][0m
+[0;32mok: [node01][0m
+
+TASK [zabbix-agent : Download Zabbix repository RPM] ***************************
+[0;33mchanged: [node01][0m
+[0;33mchanged: [node02][0m
+
+TASK [zabbix-agent : Install Zabbix repository from local RPM] *****************
+[0;33mchanged: [node01][0m
+[0;33mchanged: [node02][0m
+
+TASK [zabbix-agent : Clean DNF cache] ******************************************
+[0;32mok: [node01][0m
+[0;32mok: [node02][0m
+
+TASK [zabbix-agent : Install Zabbix Agent] *************************************
+[0;33mchanged: [node01][0m
+[0;33mchanged: [node02][0m
+
+TASK [zabbix-agent : Configure Zabbix Agent] ***********************************
+[0;33mchanged: [node01][0m
+[0;33mchanged: [node02][0m
+
+TASK [zabbix-agent : Allow Zabbix port] ****************************************
+[0;32mok: [node02][0m
+[0;32mok: [node01][0m
+
+TASK [zabbix-agent : Start Zabbix Agent] ***************************************
+[0;33mchanged: [node02][0m
+[0;33mchanged: [node01][0m
+
+RUNNING HANDLER [zabbix-agent : restart zabbix-agent] **************************
+[0;33mchanged: [node01][0m
+[0;33mchanged: [node02][0m
+
+PLAY [=== PHASE 6: Configuration Active Directory Windows ===] *****************
+[0;36mskipping: no hosts matched[0m
+
+PLAY [=== PHASE 7: Durcissement de sécurité Windows ===] ***********************
+[0;36mskipping: no hosts matched[0m
+
+PLAY [=== PHASE FINALE: Rapport de déploiement ===] ****************************
+[0;36mskipping: no hosts matched[0m
+
+PLAY RECAP *********************************************************************
+[0;33madmin[0m                      : [0;32mok=26  [0m [0;33mchanged=16  [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+[0;33mnode01[0m                     : [0;32mok=66  [0m [0;33mchanged=42  [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+[0;33mnode02[0m                     : [0;32mok=46  [0m [0;33mchanged=31  [0m unreachable=0    failed=0    [0;36mskipped=6   [0m rescued=0    ignored=0   
+
+[15:24:45] OK: Ansible Linux
+[15:24:45] START: Windows VM
+Bringing machine 'winsrv' up with 'vmware_desktop' provider...
+==> winsrv: Cloning VMware VM: 'gusztavvargadr/windows-server-2022-standard'. This can take some time...
+==> winsrv: Verifying vmnet devices are healthy...
+==> winsrv: Preparing network adapters...
+==> winsrv: Fixed port collision for 22 => 2222. Now on port 2202.
+==> winsrv: Starting the VMware VM...
+==> winsrv: Waiting for the VM to receive an address...
+==> winsrv: Forwarding ports...
+    winsrv: -- 3389 => 53389
+    winsrv: -- 5985 => 55985
+    winsrv: -- 5986 => 55986
+    winsrv: -- 22 => 2202
+==> winsrv: Waiting for machine to boot. This may take a few minutes...
+    winsrv: WinRM address: 192.168.56.135:5985
+    winsrv: WinRM username: vagrant
+    winsrv: WinRM execution_time_limit: PT2H
+    winsrv: WinRM transport: plaintext
+==> winsrv: Machine booted and ready!
+==> winsrv: Setting hostname...
+==> winsrv: Waiting for machine to reboot...
+==> winsrv: Configuring network adapters within the VM...
+==> winsrv: Configuring secondary network adapters through VMware 
+==> winsrv: on Windows is not yet supported. You will need to manually
+==> winsrv: configure the network adapter.
+==> winsrv: Enabling and configuring shared folders...
+    winsrv: -- C:/Users/Marwa/Desktop/cerberus: /vagrant
+==> winsrv: Running provisioner: shell...
+    winsrv: Running: scripts/ConfigureRemotingForAnsible.ps1 as C:\tmp\vagrant-shell.ps1
+    winsrv: === Configuring WinRM for Ansible ===
+    winsrv: WinRM service is already running on this machine.
+    winsrv: WinRM is already set up for remote management on this computer.
+    winsrv: Service
+    winsrv:     RootSDDL = O:NSG:BAD:P(A;;GA;;;BA)(A;;GR;;;IU)S:P(AU;FA;GA;;;WD)(AU;SA;GXGW;;;WD)
+    winsrv:     MaxConcurrentOperations = 4294967295
+    winsrv:     MaxConcurrentOperationsPerUser = 1500
+    winsrv:     EnumerationTimeoutms = 240000
+    winsrv:     MaxConnections = 300
+    winsrv:     MaxPacketRetrievalTimeSeconds = 120
+    winsrv:     AllowUnencrypted = true
+    winsrv:     Auth
+    winsrv:         Basic = true
+    winsrv:         Kerberos = true
+    winsrv:         Negotiate = true
+    winsrv:         Certificate = false
+    winsrv:         CredSSP = false
+    winsrv:         CbtHardeningLevel = Relaxed
+    winsrv:     DefaultPorts
+    winsrv:         HTTP = 5985
+    winsrv:         HTTPS = 5986
+    winsrv:     IPv4Filter = *
+    winsrv:     IPv6Filter = *
+    winsrv:     EnableCompatibilityHttpListener = false
+    winsrv:     EnableCompatibilityHttpsListener = false
+    winsrv:     CertificateThumbprint
+    winsrv:     AllowRemoteAccess = true
+    winsrv: 
+    winsrv: Auth
+    winsrv:     Basic = true
+    winsrv:     Kerberos = true
+    winsrv:     Negotiate = true
+    winsrv:     Certificate = false
+    winsrv:     CredSSP = false
+    winsrv:     CbtHardeningLevel = Relaxed
+    winsrv: 
+    winsrv: Ok.
+    winsrv: 
+    winsrv: Ok.
+    winsrv: 
+    winsrv: Ok.
+    winsrv: 
+    winsrv: WinRM configured successfully.
+==> winsrv: Running provisioner: shell...
+    winsrv: Running: scripts/fix_ip.ps1 as C:\tmp\vagrant-shell.ps1
+    winsrv: === Fix IP Configuration ===
+    winsrv: Target IP: 192.168.56.30
+    winsrv: Subnet: 192.168.56
+    winsrv: Found interface: Ethernet1
+    winsrv: Scheduling IP change to 192.168.56.30 in 10 seconds to allow Vagrant to disconnect cleanly...
+    winsrv: IP change scheduled successfully. The connection will drop momentarily after this script exits.
+[15:27:39] OK: Windows VM
+[15:27:39] Waiting for WinRM...
+[15:28:02] WinRM OK after 2 tries
+[15:28:12] START: Ansible Windows
+[1;35m[WARNING]: Ansible is being run in a world writable directory[0m
+[1;35m(/home/vagrant/ansible), ignoring it as an ansible.cfg source. For more[0m
+[1;35minformation see[0m
+[1;35mhttps://docs.ansible.com/ansible/devel/reference_appendices/config.html#cfg-in-[0m
+[1;35mworld-writable-dir[0m
+[1;35m[WARNING]: Found both group and host with same name: admin[0m
+
+PLAY [=== PHASE 1: Installation du serveur Zabbix ===] *************************
+[0;36mskipping: no hosts matched[0m
+
+PLAY [=== PHASE 2: Configuration du cluster HA (Node01 & Node02) ===] **********
+[0;36mskipping: no hosts matched[0m
+
+PLAY [=== PHASE 3: Configuration des ressources du cluster ===] ****************
+[0;36mskipping: no hosts matched[0m
+
+PLAY [=== PHASE 4: Durcissement de sécurité Linux ===] *************************
+[0;36mskipping: no hosts matched[0m
+
+PLAY [=== PHASE 5: Installation des agents Zabbix ===] *************************
+[0;36mskipping: no hosts matched[0m
+
+PLAY [=== PHASE 6: Configuration Active Directory Windows ===] *****************
+
+TASK [Gathering Facts] *********************************************************
+[0;32mok: [winsrv][0m
+
+TASK [windows-ad : Configure hosts file] ***************************************
+[0;33mchanged: [winsrv] => (item=192.168.56.10 admin admin.cerberus.local)[0m
+[0;33mchanged: [winsrv] => (item=192.168.56.21 node01 node01.cerberus.local)[0m
+[0;33mchanged: [winsrv] => (item=192.168.56.22 node02 node02.cerberus.local)[0m
+[0;33mchanged: [winsrv] => (item=192.168.56.30 winsrv winsrv.cerberus.local)[0m
+
+TASK [windows-ad : Install AD-Domain-Services] *********************************
+[0;33mchanged: [winsrv][0m
+
+TASK [windows-ad : Install DNS] ************************************************
+[0;33mchanged: [winsrv][0m
+
+TASK [windows-ad : Reboot after feature install] *******************************
+[0;36mskipping: [winsrv][0m
+
+TASK [windows-ad : Check if DC exists] *****************************************
+[0;32mok: [winsrv][0m
+
+TASK [windows-ad : Promote to Domain Controller] *******************************
+[0;33mchanged: [winsrv][0m
+
+TASK [windows-ad : Reboot after DC promotion] **********************************
+[0;33mchanged: [winsrv][0m
+
+TASK [windows-ad : Configure DNS forwarder] ************************************
+[0;33mchanged: [winsrv][0m
+
+PLAY [=== PHASE 7: Durcissement de sécurité Windows ===] ***********************
+
+TASK [Gathering Facts] *********************************************************
+[0;32mok: [winsrv][0m
+
+TASK [windows-hardening : Disable Guest account] *******************************
+[0;32mok: [winsrv][0m
+
+TASK [windows-hardening : Enable Windows Firewall] *****************************
+[0;33mchanged: [winsrv][0m
+
+TASK [windows-hardening : Enforce Password Policy] *****************************
+[0;33mchanged: [winsrv][0m
+
+TASK [windows-hardening : Disable SMBv1] ***************************************
+[0;33mchanged: [winsrv][0m
+
+TASK [windows-hardening : Disable LLMNR] ***************************************
+[0;33mchanged: [winsrv][0m
+
+TASK [windows-hardening : Disable NetBIOS] *************************************
+[0;33mchanged: [winsrv][0m
+
+TASK [windows-hardening : Enable Audit Logon Events] ***************************
+[0;33mchanged: [winsrv][0m
+
+TASK [windows-hardening : Enable RDP] ******************************************
+[0;32mok: [winsrv][0m
+
+TASK [windows-hardening : Allow RDP in Firewall] *******************************
+[0;33mchanged: [winsrv][0m
+
+PLAY [=== PHASE FINALE: Rapport de déploiement ===] ****************************
+[0;36mskipping: no hosts matched[0m
+
+PLAY RECAP *********************************************************************
+[0;33mwinsrv[0m                     : [0;32mok=18  [0m [0;33mchanged=13  [0m unreachable=0    failed=0    [0;36mskipped=1   [0m rescued=0    ignored=0   
+
+[15:34:53] OK: Ansible Windows
+[15:34:59] START: Dashboard
+[1;35m[WARNING]: Ansible is being run in a world writable directory[0m
+[1;35m(/home/vagrant/ansible), ignoring it as an ansible.cfg source. For more[0m
+[1;35minformation see[0m
+[1;35mhttps://docs.ansible.com/ansible/devel/reference_appendices/config.html#cfg-in-[0m
+[1;35mworld-writable-dir[0m
+[1;35m[WARNING]: provided hosts list is empty, only localhost is available. Note that[0m
+[1;35mthe implicit localhost does not match 'all'[0m
+
+PLAY [Create Zabbix Dashboard] *************************************************
+
+TASK [Gathering Facts] *********************************************************
+[0;32mok: [localhost][0m
+
+TASK [Copy dashboard script] ***************************************************
+[0;33mchanged: [localhost][0m
+
+TASK [Execute dashboard script] ************************************************
+[0;33mchanged: [localhost][0m
+
+TASK [Show result] *************************************************************
+[0;32mok: [localhost] => {[0m
+[0;32m    "result.stdout_lines": [[0m
+[0;32m        "[*] Connecting to Zabbix API...",[0m
+[0;32m        "[+] Logged in successfully",[0m
+[0;32m        "[*] Fetching hosts...",[0m
+[0;32m        "[+] node01 ID: 10680",[0m
+[0;32m        "[+] node02 ID: 10681",[0m
+[0;32m        "[*] Fetching CPU graphs...",[0m
+[0;32m        "[+] CPU graph node01: 3148",[0m
+[0;32m        "[+] CPU graph node02: 3163",[0m
+[0;32m        "[*] Fetching Memory graphs...",[0m
+[0;32m        "[+] Memory graph node01: 3150",[0m
+[0;32m        "[+] Memory graph node02: 3167",[0m
+[0;32m        "[*] Checking for existing dashboard...",[0m
+[0;32m        "[*] Creating dashboard...",[0m
+[0;32m        "[+] Dashboard 'CERBERUS - Cluster Monitoring' created successfully!",[0m
+[0;32m        "[+] Dashboard ID: 399"[0m
+[0;32m    ][0m
+[0;32m}[0m
+
+PLAY RECAP *********************************************************************
+[0;33mlocalhost[0m                  : [0;32mok=4   [0m [0;33mchanged=2   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[15:35:07] OK: Dashboard
+==> winsrv: Stopping the VMware VM...
+==> winsrv: Deleting the VM...
+==> node02: Stopping the VMware VM...
+==> node02: Deleting the VM...
+==> node01: Stopping the VMware VM...
+==> node01: Deleting the VM...
+==> admin: Stopping the VMware VM...
+==> admin: Deleting the VM...

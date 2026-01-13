@@ -1,0 +1,9 @@
+Server={{ zabbix_server_ip }}
+ServerActive={{ zabbix_server_ip }}
+Hostname={{ inventory_hostname }}
+ListenPort={{ zabbix_agent_port }}
+ListenIP=0.0.0.0
+PidFile=/run/zabbix/zabbix_agentd.pid
+LogFile=/var/log/zabbix/zabbix_agentd.log
+LogFileSize=0
+Include=/etc/zabbix/zabbix_agentd.d/*.conf
