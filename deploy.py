@@ -215,8 +215,6 @@ class Lab:
     def info(self):
         print(f"\n=== ACCESS ===\n")
         print(f"Zabbix:   http://192.168.56.10/ (Admin/zabbix)")
-        print(f"Node01:   http://192.168.56.21/")
-        print(f"Node02:   http://192.168.56.22/")
         print(f"VIP:      http://192.168.56.100/")
         print(f"RDP:      192.168.56.30:3389 (CERBERUS\\Administrator)\n")
 
