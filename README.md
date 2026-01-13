@@ -70,7 +70,6 @@ Cerberus automatically deploys a complete infrastructure lab featuring:
 | HA clusters are complex to configure | Pre-configured Pacemaker/Corosync |
 | Monitoring setup is tedious | Zabbix auto-deployed with agents |
 | Labs are hard to reproduce | Vagrant ensures identical environments |
-| Learning infrastructure is expensive | Runs on your laptop for free |
 
 
 
